@@ -15,7 +15,7 @@ interface userDataState {
   isError: boolean;
   email: string;
   fullName: string;
-  dob: string;
+  dateOfIncorporation: string;
   companyName: string;
   avatar: string;
   currentServices: Array<service>;
@@ -33,7 +33,7 @@ const userDataInitial: userDataState = {
   isError: false,
   email: "",
   fullName: "",
-  dob: "",
+  dateOfIncorporation: "",
   companyName: "",
   avatar: "",
   currentServices: [],
@@ -100,7 +100,7 @@ export const availableServiceReducer = (
 //           isError: false,
 //           email: action?.payload?.email,
 //           fullName: action?.payload?.fullName,
-//           dob: action?.payload?.dob,
+//           dateOfIncorporation: action?.payload?.dateOfIncorporation,
 //           companyName: action?.payload?.companyName,
 //           avatar: action?.payload?.avatar,
 //           currentServices: action?.payload?.currentServices,

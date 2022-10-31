@@ -4,7 +4,7 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$Js.bv6kZIDS7Vr51zMdk/eK9e0mueGrMbodXWuFijZBmlnofq7wH.",
       "fullName": "Mangesh Landge",
-      "dob": "01-01-2000",
+      "dateOfIncorporation": "01-01-2000",
       "currentServices": [
         {
           "id": 3,
@@ -31,7 +31,7 @@
       "email": "prem@gmail.com",
       "password": "$2a$10$voeYj.ClUq6tP5A0Xhfnku6lXBfDvdTyZbmkertouQ7DYKz5m84kO",
       "full name": "Prem Kumar",
-      "dob": "01-01-1999",
+      "dateOfIncorporation": "01-01-1999",
       "companyName": "",
       "avatar": "",
       "currentServices": [],
