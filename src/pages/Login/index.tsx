@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Field, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../redux/auth/actionCreators";
@@ -42,6 +42,17 @@ export default function Login() {
   const navigate = useNavigate();
   const { isAuth } = useSelector((state: any) => state.login);
   const dispatch: Dispatch<any> = useDispatch();
+
+  const handleSubmit = async (values: FormValues) => {
+    await dispatch(userLogin(values));
+  };
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/");
+    }
+  }, [isAuth]);
+
   return (
     <>
       <h1>Login Screen</h1>
@@ -51,13 +62,7 @@ export default function Login() {
           password: "",
         }}
         onSubmit={(values: FormValues) => {
-          dispatch(userLogin(values));
-
-          if (isAuth) {
-            navigate("/");
-          }
-          console.log("loginPageAuth", isAuth);
-          console.log("formValues", values);
+          handleSubmit(values);
         }}
       >
         {({ errors, touched, validateField, validateForm }) => (

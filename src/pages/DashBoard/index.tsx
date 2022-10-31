@@ -16,7 +16,11 @@ export default function Dashboard() {
   const { isAuth } = useSelector((state: any) => state?.login);
   const { token } = useSelector((state: any) => state?.login);
   const { userId } = useSelector((state: any) => state?.login);
-  const userDetails = useSelector((state: any) => state?.login.data);
+  // const { token } = useSelector((state: any) => state?.signUp);
+  // const { userId } = useSelector((state: any) => state?.signUp);
+  const userDetails = useSelector(
+    (state: any) => state?.login.data || state?.signUp.data
+  );
   const dashboardUserDetails = useSelector((state: any) => state?.dashBoard);
   const { availableServices } = useSelector(
     (state: any) => state?.dashBoardAvailableServices
@@ -44,8 +48,8 @@ export default function Dashboard() {
   // console.log("check", [...Array.from(new Set(remainingServices))]);
 
   // console.log("DASHBORD_AUTH", isAuth);
-  // console.log("DASHBORD_TOKEN", token);
-  // console.log("DASHBORD_TOKEN", userId);
+  console.log("DASHBORD_TOKEN", token);
+  console.log("DASHBORD_USERID", userId);
   // console.log("DASHBORD_DATA", userDetails);
   // console.log("DASHBORD_DATAS", userDetails?.currentServices);
   // console.log("DASBOAD_AVAILABLE_SERVICE", availableServices);

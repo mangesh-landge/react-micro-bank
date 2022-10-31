@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import { authReducer } from "./auth/reducer";
 import { availableServiceReducer } from "./availableServices/reducer";
 import { dashBoardReducer } from "./dashboard/reducer";
+import { signUpReducer } from "./signUp/reducer";
 
 const rootReducer = combineReducers({
   login: authReducer,
   dashBoardAvailableServices: availableServiceReducer,
   dashBoard: dashBoardReducer,
+  signUp: signUpReducer,
 });
 
 const store = createStore(

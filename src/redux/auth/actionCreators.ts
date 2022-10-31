@@ -48,6 +48,7 @@ export const userLogin = (payload: any) => async (dispatch: any) => {
     const { data } = await axios.post("http://localhost:3333/login", payload);
     dispatch(loginSuccess(data));
     console.log("LOGIN", data);
+    return data;
     // getUserData(data?.accessToken);
     // getAvailableServices();
   } catch (error) {

@@ -87,6 +87,7 @@ export const deleteUserDataFailure = (message: any) => {
 };
 
 export const getUserDetails = (payload: any) => async (dispatch: any) => {
+  console.log("GET_PAYLOAD", payload);
   dispatch(getUserDataRequest());
   try {
     let config = { headers: { Authorization: payload?.token } };
@@ -97,6 +98,7 @@ export const getUserDetails = (payload: any) => async (dispatch: any) => {
     );
     console.log("USER", data);
     dispatch(getUserDataSuccess(data));
+    return data;
   } catch (error) {
     dispatch(getUserDataFailure(error));
     console.log("User data failed", error);

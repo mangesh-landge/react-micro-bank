@@ -13,14 +13,6 @@
           "rating": 0,
           "header": "Investments",
           "isCurrentService": true
-        },
-        {
-          "id": 4,
-          "mIcon": "file/payment.svg",
-          "dIcon": "file/payroll2.png",
-          "rating": 0,
-          "header": "Payments",
-          "isCurrentService": false
         }
       ],
       "companyName": "",
@@ -28,14 +20,15 @@
       "id": "-sVkD4x"
     },
     {
-      "email": "prem@gmail.com",
-      "password": "$2a$10$voeYj.ClUq6tP5A0Xhfnku6lXBfDvdTyZbmkertouQ7DYKz5m84kO",
-      "full name": "Prem Kumar",
-      "dateOfIncorporation": "01-01-1999",
+      "email": "admin4@gmail.com",
+      "password": "$2a$10$MIB1xwiqgLDLYrVekRes7u/bhV4O5WVRplnp7zuQRBKWhbpr7C7Ga",
+      "fullName": "Mangesh Landge",
+      "dateOfIncorporation": "2022-10-10",
+      "confirmPassword": "Admin@123",
       "companyName": "",
       "avatar": "",
       "currentServices": [],
-      "id": "vJWBFTW"
+      "id": "gptKNi6"
     }
   ],
   "availableServices": [

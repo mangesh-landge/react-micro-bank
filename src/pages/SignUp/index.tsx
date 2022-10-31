@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
+import { userSignUp } from "../../redux/signUp/actionCreators";
 
 interface SignUpValues {
   fullName: string;
@@ -36,6 +40,14 @@ const SignupSchema = Yup.object().shape({
 });
 
 export default function CreateAccount() {
+  const navigate = useNavigate();
+  const { isAuth } = useSelector((state: any) => state?.signUp);
+  const dispatch: Dispatch<any> = useDispatch();
+
+  const handleSubmit = async (values: SignUpValues) => {
+    await dispatch(userSignUp(values));
+    navigate("/login");
+  };
   return (
     <>
       <h1>Create Acount Screen</h1>
@@ -52,8 +64,7 @@ export default function CreateAccount() {
         }}
         validationSchema={SignupSchema}
         onSubmit={(values: SignUpValues) => {
-          // same shape as initial values
-          console.log(values);
+          handleSubmit(values);
         }}
       >
         {({ errors, touched }) => (
