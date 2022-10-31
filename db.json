@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$Js.bv6kZIDS7Vr51zMdk/eK9e0mueGrMbodXWuFijZBmlnofq7wH.",
+      "fullName": "Mangesh Landge",
+      "dob": "01-01-2000",
+      "currentServices": [
+        {
+          "id": 3,
+          "mIcon": "file/time.svg",
+          "dIcon": "file/investment2.png",
+          "rating": 0,
+          "header": "Investments",
+          "isCurrentService": true
+        },
+        {
+          "id": 4,
+          "mIcon": "file/payment.svg",
+          "dIcon": "file/payroll2.png",
+          "rating": 0,
+          "header": "Payments",
+          "isCurrentService": false
+        }
+      ],
+      "companyName": "",
+      "avatar": "",
+      "id": "-sVkD4x"
+    },
+    {
+      "email": "prem@gmail.com",
+      "password": "$2a$10$voeYj.ClUq6tP5A0Xhfnku6lXBfDvdTyZbmkertouQ7DYKz5m84kO",
+      "full name": "Prem Kumar",
+      "dob": "01-01-1999",
+      "companyName": "",
+      "avatar": "",
+      "currentServices": [],
+      "id": "vJWBFTW"
+    }
+  ],
+  "availableServices": [
+    {
+      "id": 1,
+      "mIcon": "file/wallet.svg",
+      "dIcon": "file/wallet2.png",
+      "rating": 0,
+      "header": "Wallet",
+      "isCurrentService": false
+    },
+    {
+      "id": 2,
+      "mIcon": "file/bank.svg",
+      "dIcon": "file/bank2.png",
+      "rating": 0,
+      "header": "Current Account",
+      "isCurrentService": false
+    },
+    {
+      "id": 3,
+      "mIcon": "file/time.svg",
+      "dIcon": "file/investment2.png",
+      "rating": 0,
+      "header": "Investments",
+      "isCurrentService": false
+    },
+    {
+      "id": 4,
+      "mIcon": "file/payment.svg",
+      "dIcon": "file/payroll2.png",
+      "rating": 0,
+      "header": "Payments",
+      "isCurrentService": false
+    },
+    {
+      "id": 5,
+      "mIcon": "file/tax.svg",
+      "dIcon": "file/tax2.png",
+      "rating": 0,
+      "header": "Tax Payment",
+      "isCurrentService": false
+    },
+    {
+      "id": 6,
+      "mIcon": "file/money-bag.svg",
+      "dIcon": "file/loan2.png",
+      "rating": 0,
+      "header": "Loan",
+      "isCurrentService": false
+    },
+    {
+      "id": 7,
+      "mIcon": "file/payroll.svg",
+      "dIcon": "file/payments2.png",
+      "rating": 0,
+      "header": "Payroll",
+      "isCurrentService": false
+    }
+  ]
+}

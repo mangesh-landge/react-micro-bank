@@ -1,0 +1,41 @@
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+
+$breakpoints: (
+  "xs": $xs,
+  "sm": $sm,
+  "md": $md,
+  "lg": $lg,
+  "xl": $xl,
+  "xxl": $xxl,
+) !default;
+
+// Spacings
+$sd-spacing-xxs: 4px !default;
+$sd-spacing-xs: 8px !default;
+$sd-spacing-sm: 16px !default;
+$sd-spacing-md: 24px !default;
+$sd-spacing-lg: 32px !default;
+$sd-spacing-xl: 40px !default;
+$sd-spacing-xxl: 80px !default;
+
+$sd-border-radius: 4px !default;
+
+// Font-sizes
+$font-size-xss: 12px !default;
+$font-size-xs: 14px !default;
+$font-size-sm: 16px !default;
+$font-size-md: 18px !default;
+$font-size-lg: 20px !default;
+$font-size-xl: 24px !default;
+$font-size-xxl: 32px !default;
+$font-size-wide: 50px !default;
+
+// Colors
+// $sd-black: #081d2c !default;
+$sd-grey-background: #e5e5e5;
+$sd-ligth-magenta: #fff0f3;

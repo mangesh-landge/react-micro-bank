@@ -1,0 +1,142 @@
+.mainCont {
+  overflow-x: hidden;
+}
+
+.dashboard {
+  width: 131px;
+  height: 33px;
+  left: 24px;
+  top: 104px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: flex-end;
+  color: #1a1a1a;
+  padding: 30px 0px 0px 20px;
+}
+
+.toggleBar {
+  width: 95%;
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  display: flex;
+  margin: 20px;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+}
+
+.active {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+  border-top: 3px solid #e8544b;
+  pointer-events: none;
+}
+
+.notActive {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+}
+
+.summary {
+  width: 95%;
+  height: 145px;
+  background: #fff0f3;
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 0px 20px 32px 20px;
+}
+
+.summaryTag {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  color: #1a1a1a;
+  padding: 24px;
+}
+
+.row {
+  display: flex;
+  flex: wrap;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0px 0px 10px 20px;
+}
+
+.capitalDes {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.numbers {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #333333;
+  width: 75px;
+  height: 19px;
+  margin-top: 10px;
+}
+
+.services {
+  width: 58px;
+  height: 19px;
+  left: 24px;
+  top: 410px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  color: #1a1a1a;
+}
+
+.italicText {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  color: #1a1a1a;
+}
+
+.smallCont {
+  display: flex;
+  margin: 20px;
+}
