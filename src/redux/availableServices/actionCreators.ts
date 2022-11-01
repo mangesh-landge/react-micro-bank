@@ -61,6 +61,7 @@ export const getAvailableServices = () => async (dispatch: any) => {
     const { data } = await axios.get(`http://localhost:3333/availableServices`);
     // console.log("AvailableServices", data);
     dispatch(availableServiceSuccess(data));
+    return data;
   } catch (error) {
     dispatch(availableServiceFailure(error));
     console.log("Available Services", error);

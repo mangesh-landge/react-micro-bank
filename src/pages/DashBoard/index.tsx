@@ -26,30 +26,29 @@ export default function Dashboard() {
     (state: any) => state?.dashBoardAvailableServices
   );
 
-  // function getRemaingServices(a1: Array<any>, a2: Array<any>) {
-  //   let temp = a1;
-  //   let ans = [];
-  //   for (let i = 0; i < temp?.length; i++) {
-  //     for (let j = 0; j < a2?.length; j++) {
-  //       // if (temp[i].id !== a2[j].id) {
-  //       if (!a2.includes(temp[i].id)) {
-  //         ans.push(temp[i]);
-  //       }
-  //     }
-  //     temp = ans;
-  //   }
-  //   return ans;
-  // }
+  function getRemaingServices(a1: Array<any>, a2: Array<any>) {
+    let array = a1;
+    for (let i = 0; i < array?.length; i++) {
+      let flag = false;
+      for (let j = 0; j < a2.length; j++) {
+        if (array[i].id == a2[j].id) {
+          array.splice(i, 1);
+          if (i == 0) flag = true;
+        }
+      }
+      if (flag) i--;
+    }
+    return array;
+  }
 
-  // const remainingServices = getRemaingServices(
-  //   availableServices,
-  //   userDetails?.currentServices
-  // );
-  // console.log("check", [...Array.from(new Set(remainingServices))]);
+  const remainingServices = getRemaingServices(
+    availableServices,
+    userDetails?.currentServices
+  );
 
   // console.log("DASHBORD_AUTH", isAuth);
-  console.log("DASHBORD_TOKEN", token);
-  console.log("DASHBORD_USERID", userId);
+  // console.log("DASHBORD_TOKEN", token);
+  // console.log("DASHBORD_USERID", userId);
   // console.log("DASHBORD_DATA", userDetails);
   // console.log("DASHBORD_DATAS", userDetails?.currentServices);
   // console.log("DASBOAD_AVAILABLE_SERVICE", availableServices);
@@ -105,8 +104,8 @@ export default function Dashboard() {
             }}
           >
             <p>Available Services</p>
-            {/* {remainingServices?.map((service: any) => ( */}
-            {availableServices?.map((service: any) => (
+            {remainingServices?.map((service: any) => (
+              // {availableServices?.map((service: any) => (
               <AvailableService key={service.id} service={service} />
             ))}
           </div>

@@ -7,12 +7,20 @@
       "dateOfIncorporation": "01-01-2000",
       "currentServices": [
         {
-          "id": 3,
-          "mIcon": "file/time.svg",
-          "dIcon": "file/investment2.png",
+          "id": 5,
+          "mIcon": "file/servicesMobileView/taxPayments.svg",
+          "dIcon": "file/servicesDeskView/taxPayments.svg",
           "rating": 0,
-          "header": "Investments",
-          "isCurrentService": true
+          "header": "Tax Payment",
+          "isCurrentService": false
+        },
+        {
+          "id": 6,
+          "mIcon": "file/servicesMobileView/loans.svg",
+          "dIcon": "file/servicesDeskView/loans.svg",
+          "rating": 0,
+          "header": "Loan",
+          "isCurrentService": false
         }
       ],
       "companyName": "",
@@ -34,56 +42,56 @@
   "availableServices": [
     {
       "id": 1,
-      "mIcon": "file/wallet.svg",
-      "dIcon": "file/wallet2.png",
+      "mIcon": "file/servicesMobileView/wallet.svg",
+      "dIcon": "file/servicesDeskView/wallet.svg",
       "rating": 0,
       "header": "Wallet",
       "isCurrentService": false
     },
     {
       "id": 2,
-      "mIcon": "file/bank.svg",
-      "dIcon": "file/bank2.png",
+      "mIcon": "file/servicesMobileView/CurrentAccount.svg",
+      "dIcon": "file/servicesDeskView/CurrentAccount.svg",
       "rating": 0,
       "header": "Current Account",
       "isCurrentService": false
     },
     {
       "id": 3,
-      "mIcon": "file/time.svg",
-      "dIcon": "file/investment2.png",
+      "mIcon": "file/servicesMobileView/investments.svg",
+      "dIcon": "file/servicesDeskView/investments.svg",
       "rating": 0,
       "header": "Investments",
       "isCurrentService": false
     },
     {
       "id": 4,
-      "mIcon": "file/payment.svg",
-      "dIcon": "file/payroll2.png",
+      "mIcon": "file/servicesMobileView/payments.svg",
+      "dIcon": "file/servicesDeskView/payments.svg",
       "rating": 0,
       "header": "Payments",
       "isCurrentService": false
     },
     {
       "id": 5,
-      "mIcon": "file/tax.svg",
-      "dIcon": "file/tax2.png",
+      "mIcon": "file/servicesMobileView/taxPayments.svg",
+      "dIcon": "file/servicesDeskView/taxPayments.svg",
       "rating": 0,
       "header": "Tax Payment",
       "isCurrentService": false
     },
     {
       "id": 6,
-      "mIcon": "file/money-bag.svg",
-      "dIcon": "file/loan2.png",
+      "mIcon": "file/servicesMobileView/loans.svg",
+      "dIcon": "file/servicesDeskView/loans.svg",
       "rating": 0,
       "header": "Loan",
       "isCurrentService": false
     },
     {
       "id": 7,
-      "mIcon": "file/payroll.svg",
-      "dIcon": "file/payments2.png",
+      "mIcon": "file/servicesMobileView/payroll.svg",
+      "dIcon": "file/servicesDeskView/payroll.svg",
       "rating": 0,
       "header": "Payroll",
       "isCurrentService": false
