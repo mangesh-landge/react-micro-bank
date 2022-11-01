@@ -1,10 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
 import { userSignUp } from "../../redux/signUp/actionCreators";
+
+import "./index.css";
+import unHideIcon from "../../assets/file/hide_unhide.svg";
+import hideIcon from "../../assets/file/hide_logo.svg";
+import logoGroup7 from "../../assets/file/loginLogo/Group7.svg";
+import teamSpirit from "../../assets/file/loginLogo/team-spirit-pana-1.svg";
+import logoGroup6 from "../../assets/file/loginLogo/Group6.svg";
+import logoGroup13 from "../../assets/file/loginLogo/13.svg";
 
 interface SignUpValues {
   fullName: string;
@@ -43,60 +51,108 @@ export default function CreateAccount() {
   const navigate = useNavigate();
   const { isAuth } = useSelector((state: any) => state?.signUp);
   const dispatch: Dispatch<any> = useDispatch();
+  const [isHide, setIsHide] = useState<boolean>(true);
+  const [isHideConfirmPass, setIsHideConfirmPass] = useState<boolean>(true);
 
   const handleSubmit = async (values: SignUpValues) => {
     await dispatch(userSignUp(values));
     navigate("/login");
   };
   return (
-    <>
-      <h1>Create Acount Screen</h1>
-      <Formik
-        initialValues={{
-          fullName: "",
-          dateOfIncorporation: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
-          companyName: "",
-          avatar: "",
-          currentServices: [],
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={(values: SignUpValues) => {
-          handleSubmit(values);
-        }}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <label>Full Name</label>
-            <Field name="fullName" />
-            {errors.fullName && touched.fullName ? (
-              <div>{errors.fullName}</div>
-            ) : null}
-            <label>Date of Incorporation</label>
-            <Field name="dateOfIncorporation" type="date" />
-            {errors.dateOfIncorporation && touched.dateOfIncorporation ? (
-              <div>{errors.dateOfIncorporation}</div>
-            ) : null}
-            <label>Email</label>
-            <Field name="email" type="email" />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
-            <label>Password</label>
-            <Field name="password" />
-            {errors.password && touched.password ? (
-              <div>{errors.password}</div>
-            ) : null}
-            <label>Confirm Password</label>
-            <Field name="confirmPassword" />
-            {errors.confirmPassword && touched.confirmPassword ? (
-              <div>{errors.confirmPassword}</div>
-            ) : null}
+    <div className="signup-container">
+      {/* Logo */}
+      <div className="logo-img">
+        <img className="logo-group-7" src={logoGroup7} alt="logo group 7" />
+        <img className="team-spirit-logo" src={teamSpirit} alt="team spirit" />
+        <p>Micro Bank</p>
+        <img className="logo-group-6" src={logoGroup6} alt="group logo 6" />
+        <img className="logo-group-13" src={logoGroup13} alt="group logo 13" />
+      </div>
+      {/* Signup Form */}
+      <div className="signup-form">
+        <div>
+          <h1>Create an Account</h1>
+          <Formik
+            initialValues={{
+              fullName: "",
+              dateOfIncorporation: "",
+              email: "",
+              password: "",
+              confirmPassword: "",
+              companyName: "",
+              avatar: "",
+              currentServices: [],
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={(values: SignUpValues) => {
+              handleSubmit(values);
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <p className="form-lable">Full Name</p>
+                <div className="form-input-box">
+                  <Field name="fullName" />
+                </div>
+                {errors.fullName && touched.fullName ? (
+                  <div className="form-error">{errors.fullName}</div>
+                ) : null}
+                <p className="form-lable">Date of Incorporation</p>
+                <div className="form-input-box">
+                  <Field name="dateOfIncorporation" type="date" />
+                </div>
+                {errors.dateOfIncorporation && touched.dateOfIncorporation ? (
+                  <div className="form-error">{errors.dateOfIncorporation}</div>
+                ) : null}
+                <p className="form-lable">Email</p>
+                <div className="form-input-box">
+                  <Field name="email" type="email" />
+                </div>
+                {errors.email && touched.email ? (
+                  <div className="form-error">{errors.email}</div>
+                ) : null}
+                <p className="form-lable">Password</p>
+                <div className="form-input-box">
+                  <Field name="password" type={isHide ? "password" : "text"} />
+                  <img
+                    onClick={() => setIsHide(!isHide)}
+                    src={isHide ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+                {errors.password && touched.password ? (
+                  <div className="form-error">{errors.password}</div>
+                ) : null}
+                <p className="form-lable">Confirm Password</p>
+                <div className="form-input-box">
+                  <Field
+                    name="confirmPassword"
+                    type={isHideConfirmPass ? "password" : "text"}
+                  />
+                  <img
+                    onClick={() => setIsHideConfirmPass(!isHideConfirmPass)}
+                    src={isHideConfirmPass ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+                {errors.confirmPassword && touched.confirmPassword ? (
+                  <div className="form-error">{errors.confirmPassword}</div>
+                ) : null}
 
-            <button type="submit">Submit</button>
-          </Form>
-        )}
-      </Formik>
-    </>
+                <input
+                  className="create-account-button"
+                  type="submit"
+                  value="Create an Account"
+                />
+
+                <p className="to-login-account">
+                  Already have an account? <Link to={"/login"}>Login</Link>
+                </p>
+              </Form>
+            )}
+          </Formik>
+        </div>
+      </div>
+    </div>
   );
 }
