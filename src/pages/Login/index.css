@@ -1,0 +1,260 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #1a1a1a;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+.login-container {
+  display: flex;
+  max-width: 1366px;
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo side Style */
+.logo-img {
+  position: relative;
+  flex: 0.5;
+  height: 100%;
+  height: 768px;
+  background: #fe2d17;
+}
+
+.team-spirit-logo {
+  position: absolute;
+  top: 190px;
+  left: 0px;
+  width: 500px;
+  height: 500px;
+  margin: -110px 92px;
+}
+
+.logo-group-7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-group-6 {
+  position: absolute;
+  top: 615px;
+  right: 24px;
+}
+
+.logo-group-13 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.logo-img p {
+  position: absolute;
+  width: 401px;
+  height: 80px;
+  left: 141px;
+  top: 583px;
+
+  font-family: Orbitron;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 80px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+/* Form side style */
+
+.login-form {
+  height: 100%;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 768px;
+  background: #ffffff;
+  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2),
+    0px 13px 19px 2px rgba(0, 0, 0, 0.14),
+    0px 40px 40px 40px rgba(0, 0, 0, 0.12);
+}
+
+.login-form > div > h1 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+  text-align: left !important;
+}
+
+.login-form > div > p {
+  color: #828282;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.form-lable {
+  margin: 24px 0 8px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.form-input-box {
+  width: 320px;
+  height: 50px;
+  background: #e8e8e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-box input {
+  padding: 0px 20px;
+  font-size: 18px;
+  width: 280px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.form-error {
+  margin: 8px 0 8px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #d90429;
+  text-align: left;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.forgot-password a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #d90429;
+}
+
+.login-button {
+  width: 320px;
+  height: 50px;
+  margin: 32px auto;
+  outline: none;
+  border: none;
+  background: #d90429;
+  box-shadow: 0px 6px 28px 5px rgba(254, 45, 23, 0.3);
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+.to-create-account {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #828282;
+  text-align: center;
+}
+
+.to-create-account a {
+  text-decoration: none;
+  color: #d90429;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#hide-password {
+  display: none;
+}
+
+@media only screen and (max-width: 1220px) {
+  .team-spirit-logo {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+  }
+
+  .logo-img p {
+    position: absolute;
+    top: 70%;
+    left: 18%;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .team-spirit-logo {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 20%;
+    left: 3%;
+  }
+  .logo-img p {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo-img {
+    display: none;
+  }
+
+  .form-input-box,
+  .login-button {
+    width: 280px;
+    height: 45px;
+  }
+
+  .form-input-box input {
+    width: 240px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login-form {
+    padding: 0 10px;
+  }
+  .logo-img {
+    display: none;
+  }
+
+  .form-input-box,
+  .login-button {
+    width: 240px;
+    height: 40px;
+  }
+
+  .form-input-box input {
+    width: 200px;
+  }
+}

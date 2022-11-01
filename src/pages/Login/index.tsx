@@ -1,9 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Field, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../redux/auth/actionCreators";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dispatch } from "redux";
+import "./index.css";
+import unHideIcon from "../../assets/file/hide_unhide.svg";
+import hideIcon from "../../assets/file/hide_logo.svg";
+import logoGroup7 from "../../assets/file/loginLogo/Group7.svg";
+import teamSpirit from "../../assets/file/loginLogo/team-spirit-pana-1.svg";
+import logoGroup6 from "../../assets/file/loginLogo/Group6.svg";
+import logoGroup13 from "../../assets/file/loginLogo/13.svg";
 
 function validateEmail(value: string) {
   let error;
@@ -34,10 +41,6 @@ interface FormValues {
   password: string;
 }
 
-interface OtherProps {
-  message: string;
-}
-
 export default function Login() {
   const navigate = useNavigate();
   const { isAuth } = useSelector((state: any) => state.login);
@@ -47,6 +50,8 @@ export default function Login() {
     await dispatch(userLogin(values));
   };
 
+  const [isHide, setIsHide] = useState<boolean>(true);
+
   useEffect(() => {
     if (isAuth) {
       navigate("/");
@@ -54,39 +59,72 @@ export default function Login() {
   }, [isAuth]);
 
   return (
-    <>
-      <h1>Login Screen</h1>
-      <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        onSubmit={(values: FormValues) => {
-          handleSubmit(values);
-        }}
-      >
-        {({ errors, touched, validateField, validateForm }) => (
-          <Form>
-            <Field name="email" validate={validateEmail} />
-            {errors.email && touched.email && <div>{errors.email}</div>}
+    <div className="login-container">
+      {/* Logo */}
+      <div className="logo-img">
+        <img className="logo-group-7" src={logoGroup7} alt="logo group 7" />
+        <img className="team-spirit-logo" src={teamSpirit} alt="team spirit" />
+        <p>Micro Bank</p>
+        <img className="logo-group-6" src={logoGroup6} alt="group logo 6" />
+        <img className="logo-group-13" src={logoGroup13} alt="group logo 13" />
+      </div>
+      {/* Login form */}
+      <div className="login-form">
+        <div>
+          <h1>Login</h1>
+          <p>Please login to your account</p>
+          <Formik
+            initialValues={{
+              email: "",
+              password: "",
+            }}
+            onSubmit={(values: FormValues) => {
+              handleSubmit(values);
+            }}
+          >
+            {({ errors, touched, validateField, validateForm }) => (
+              <Form>
+                <p className="form-lable">Email or Phone</p>
+                <div className="form-input-box">
+                  <Field name="email" validate={validateEmail} />
+                </div>
+                {errors.email && touched.email && (
+                  <div className="form-error">{errors.email}</div>
+                )}
 
-            <Field name="password" validate={validatePassword} />
-            {errors.password && touched.password && (
-              <div>{errors.password}</div>
+                <p className="form-lable">Password</p>
+                <div className="form-input-box">
+                  <Field
+                    name="password"
+                    type={isHide ? "password" : "text"}
+                    validate={validatePassword}
+                  />
+                  <img
+                    onClick={() => setIsHide(!isHide)}
+                    src={isHide ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+
+                {errors.password && touched.password && (
+                  <div className="form-error">{errors.password}</div>
+                )}
+
+                <p className="forgot-password">
+                  <a href="">Forgot Password?</a>
+                </p>
+
+                <input className="login-button" type="submit" value="Login" />
+
+                <p className="to-create-account">
+                  Don't have an account?
+                  <Link to="/create-account">create an account</Link>
+                </p>
+              </Form>
             )}
-            {/* <button type="button" onClick={() => validateField("password")}>
-              Check password
-            </button>
-            <button
-              type="button"
-              onClick={() => validateForm().then(() => console.log("blah"))}
-            >
-              Validate All
-            </button> */}
-            <button type="submit">Submit</button>
-          </Form>
-        )}
-      </Formik>
-    </>
+          </Formik>
+        </div>
+      </div>
+    </div>
   );
 }

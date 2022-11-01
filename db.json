@@ -8,16 +8,16 @@
       "currentServices": [
         {
           "id": 5,
-          "mIcon": "file/servicesMobileView/taxPayments.svg",
-          "dIcon": "file/servicesDeskView/taxPayments.svg",
+          "mIcon": "../../assets/file/servicesMobileView/taxPayments.svg",
+          "dIcon": "../../assets/file/servicesDeskView/taxPayments.svg",
           "rating": 0,
           "header": "Tax Payment",
           "isCurrentService": false
         },
         {
           "id": 6,
-          "mIcon": "file/servicesMobileView/loans.svg",
-          "dIcon": "file/servicesDeskView/loans.svg",
+          "mIcon": "../../assets/file/servicesMobileView/loans.svg",
+          "dIcon": "../../assets/file/servicesDeskView/loans.svg",
           "rating": 0,
           "header": "Loan",
           "isCurrentService": false
