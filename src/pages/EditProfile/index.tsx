@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
+import { ImageIcon } from "../../icons/Icons";
+
+import "./index.css";
+import unHideIcon from "../../assets/file/hide_unhide.svg";
+import hideIcon from "../../assets/file/hide_logo.svg";
 
 interface SignUpValues {
   avatar?: string;
@@ -15,14 +20,13 @@ interface SignUpValues {
 }
 
 const SignupSchema = Yup.object().shape({
-  fullName: Yup.string()
-    .min(3, "Too Short name!")
-    .max(50, "Too Long name!")
-    .required("Required"),
-  dateOfIncorporation: Yup.date()
-    .max(new Date(Date.now()), "Incorporation must be did")
-    .required("Required"),
+  avatar: Yup.string().nullable().notRequired(),
+  companyName: Yup.string().nullable().notRequired(),
   email: Yup.string().email("Invalid email").required("Required"),
+  oldPassword: Yup.string()
+    .required("No password provided.")
+    .min(8, "Password is too short - should be 8 chars minimum.")
+    .matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
   password: Yup.string()
     .required("No password provided.")
     .min(8, "Password is too short - should be 8 chars minimum.")
@@ -31,66 +35,127 @@ const SignupSchema = Yup.object().shape({
     [Yup.ref("password"), null],
     "Passwords must match"
   ),
-  companyName: Yup.string().nullable().notRequired(),
-  avatar: Yup.string().nullable().notRequired(),
-  currentServices: Yup.array().nullable().notRequired(),
 });
 
 export default function EditProfile() {
   // const navigate = useNavigate();
   // const { id } = useParams();
+  const [isHide, setIsHide] = useState<boolean>(true);
+  const [isHideConfirmPass, setIsHideConfirmPass] = useState<boolean>(true);
+  const [isHideOldPass, setIsHideOldPass] = useState<boolean>(true);
   return (
-    <>
-      <h1>Edit profile</h1>
-      <Formik
-        initialValues={{
-          avatar: "",
-          companyName: "",
-          email: "",
-          oldPassword: "",
-          password: "",
-          confirmPassword: "",
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={(values: SignUpValues) => {
-          console.log(values);
-        }}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <label>Avatart</label>
-            <Field name="avatar" />
-            {errors.avatar && touched.avatar ? (
-              <div>{errors.avatar}</div>
-            ) : null}
-            <label>Company Name</label>
-            <Field name="companyName" />
-            {errors.companyName && touched.companyName ? (
-              <div>{errors.companyName}</div>
-            ) : null}
-            <label>Email</label>
-            <Field name="email" type="email" />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
-            <label>Old Password</label>
-            <Field name="oldPassword" />
-            {errors.oldPassword && touched.oldPassword ? (
-              <div>{errors.oldPassword}</div>
-            ) : null}
-            <label>Password</label>
-            <Field name="password" />
-            {errors.password && touched.password ? (
-              <div>{errors.password}</div>
-            ) : null}
-            <label>Confirm Password</label>
-            <Field name="confirmPassword" />
-            {errors.confirmPassword && touched.confirmPassword ? (
-              <div>{errors.confirmPassword}</div>
-            ) : null}
+    <div>
+      <h1 className="edit-text">Edit profile</h1>
+      <div className="edit-container">
+        <div className="image-cont">
+          <div className="image-sub">
+            <div className="image-profile">
+              <ImageIcon />
+            </div>
+          </div>
+          <div className="dropimage-con">Browse Image</div>
+        </div>
+        <div className="form-component">
+          <Formik
+            initialValues={{
+              avatar: "",
+              companyName: "",
+              email: "",
+              oldPassword: "",
+              password: "",
+              confirmPassword: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={(values: SignUpValues) => {
+              console.log(values);
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                {/* <label>Avatart</label>
+                <Field name="avatar" />
+                {errors.avatar && touched.avatar ? (
+                  <div className="form-error">{errors.avatar}</div>
+                ) : null} */}
 
-            <button type="submit">Submit</button>
-          </Form>
-        )}
-      </Formik>
-    </>
+                <p className="form-lable">Company Name</p>
+                <div className="form-input-box">
+                  <Field name="companyName" />
+                </div>
+                {errors.companyName && touched.companyName ? (
+                  <div className="form-error">{errors.companyName}</div>
+                ) : null}
+
+                <p className="form-lable">Email</p>
+                <div className="form-input-box">
+                  <Field name="email" type="email" />
+                </div>
+                {errors.email && touched.email ? (
+                  <div className="form-error">{errors.email}</div>
+                ) : null}
+
+                <p className="form-lable">Old Password</p>
+                <div className="form-input-box">
+                  <Field
+                    name="oldPassword"
+                    type={isHideOldPass ? "password" : "text"}
+                  />
+                  <img
+                    onClick={() => setIsHideOldPass(!isHideOldPass)}
+                    src={isHideOldPass ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+                {errors.oldPassword && touched.oldPassword ? (
+                  <div className="form-error">{errors.oldPassword}</div>
+                ) : null}
+
+                <p className="form-lable">Password</p>
+                <div className="form-input-box">
+                  <Field name="password" type={isHide ? "password" : "text"} />
+                  <img
+                    onClick={() => setIsHide(!isHide)}
+                    src={isHide ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+                {errors.password && touched.password ? (
+                  <div className="form-error">{errors.password}</div>
+                ) : null}
+
+                <p className="form-lable">Confirm Password</p>
+                <div className="form-input-box">
+                  <Field
+                    name="confirmPassword"
+                    type={isHideConfirmPass ? "password" : "text"}
+                  />
+                  <img
+                    onClick={() => setIsHideConfirmPass(!isHideConfirmPass)}
+                    src={isHideConfirmPass ? unHideIcon : hideIcon}
+                    alt="unhide"
+                  />
+                </div>
+                {errors.confirmPassword && touched.confirmPassword ? (
+                  <div className="form-error">{errors.confirmPassword}</div>
+                ) : null}
+
+                <div className="form-button">
+                  <input
+                    className="update-account-button"
+                    type="submit"
+                    value="Update"
+                  />
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </div>
+      </div>
+      <div className="copyRight">
+        <p>
+          <span>&#169;</span> 2021 Micro Bank
+        </p>
+      </div>
+    </div>
   );
 }
