@@ -94,24 +94,21 @@ export default function Dashboard() {
             <div className="italicText">Micro Bank Services for you</div>
           </div>
 
-          <div style={{ padding: "20px", border: "1px solid red" }}>
-            <p>Current service</p>
-            {userDetails?.currentServices?.map((service: any) => (
-              <CurrentService key={service.id} service={service} />
-            ))}
+          <div className="current-services">
+            <h2 className="service-head">Current Services</h2>
+            <div className="current-services-details">
+              {userDetails?.currentServices?.map((service: any) => (
+                <CurrentService key={service.id} service={service} />
+              ))}
+            </div>
           </div>
-          <div
-            style={{
-              padding: "20px",
-              border: "1px solid teal",
-              marginTop: "20px",
-            }}
-          >
-            <p>Available Services</p>
-            {remainingServices?.map((service: any) => (
-              // {availableServices?.map((service: any) => (
-              <AvailableService key={service.id} service={service} />
-            ))}
+          <div className="available-services">
+            <h2>Available Services</h2>
+            <div className="available-services-details">
+              {remainingServices?.map((service: any) => (
+                <AvailableService key={service.id} service={service} />
+              ))}
+            </div>
           </div>
         </>
       ) : (

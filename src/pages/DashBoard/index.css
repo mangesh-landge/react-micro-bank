@@ -122,8 +122,56 @@
 }
 
 /* current Services */
+.current-services,
+.available-services {
+  height: auto;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 12px 24px 24px;
+}
 
-/* Available Services */
+.current-services > h2,
+.available-services > h2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 24px;
+  color: #1a1a1a;
+}
+
+.current-services-details,
+.available-services-details {
+  display: flex;
+  gap: 10%;
+  margin-left: 60px;
+  flex-wrap: wrap;
+}
+
+.current-sub-service p,
+.available-sub-service p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.current-sub-service,
+.available-sub-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  gap: 15px;
+  justify-content: center;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  gap: 10px;
+}
 
 /* Deatails */
 .details {

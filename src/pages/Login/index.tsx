@@ -61,7 +61,7 @@ export default function Login() {
   return (
     <div className="login-container">
       {/* Logo */}
-      <div className="logo-img">
+      <div className="loginLogo-img">
         <img className="logo-group-7" src={logoGroup7} alt="logo group 7" />
         <img className="team-spirit-logo" src={teamSpirit} alt="team spirit" />
         <p>Micro Bank</p>
@@ -117,7 +117,7 @@ export default function Login() {
                 <input className="login-button" type="submit" value="Login" />
 
                 <p className="to-create-account">
-                  Don't have an account?
+                  Don't have an account?{" "}
                   <Link to="/create-account">create an account</Link>
                 </p>
               </Form>

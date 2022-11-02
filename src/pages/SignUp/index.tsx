@@ -98,8 +98,12 @@ export default function CreateAccount() {
                   <div className="form-error">{errors.fullName}</div>
                 ) : null}
                 <p className="form-lable">Date of Incorporation</p>
-                <div className="form-input-box">
-                  <Field name="dateOfIncorporation" type="date" />
+                <div className="form-input-box ">
+                  <Field
+                    className="input-date"
+                    name="dateOfIncorporation"
+                    type="date"
+                  />
                 </div>
                 {errors.dateOfIncorporation && touched.dateOfIncorporation ? (
                   <div className="form-error">{errors.dateOfIncorporation}</div>

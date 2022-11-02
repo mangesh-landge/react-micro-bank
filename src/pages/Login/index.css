@@ -23,11 +23,11 @@ body {
 }
 
 /* Logo side Style */
-.logo-img {
+.loginLogo-img {
   position: relative;
   flex: 0.5;
   height: 100%;
-  height: 768px;
+  max-height: 768px;
   background: #fe2d17;
 }
 
@@ -58,7 +58,7 @@ body {
   right: 0;
 }
 
-.logo-img p {
+.loginLogo-img p {
   position: absolute;
   width: 401px;
   height: 80px;
@@ -187,10 +187,6 @@ body {
   line-height: 19px;
 }
 
-#hide-password {
-  display: none;
-}
-
 @media only screen and (max-width: 1220px) {
   .team-spirit-logo {
     width: 70%;
@@ -200,7 +196,7 @@ body {
     left: 5%;
   }
 
-  .logo-img p {
+  .loginLogo-img p {
     position: absolute;
     top: 70%;
     left: 18%;
@@ -216,7 +212,7 @@ body {
     top: 20%;
     left: 3%;
   }
-  .logo-img p {
+  .loginLogo-img p {
     position: absolute;
     top: 60%;
     left: 10%;
@@ -225,7 +221,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .logo-img {
+  .loginLogo-img {
     display: none;
   }
 
@@ -244,7 +240,7 @@ body {
   .login-form {
     padding: 0 10px;
   }
-  .logo-img {
+  .loginLogo-img {
     display: none;
   }
 
