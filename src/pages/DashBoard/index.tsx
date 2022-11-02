@@ -66,22 +66,26 @@ export default function Dashboard() {
     setShowSummary(condition);
   };
   return (
-    <div className="mainCont">
-      <h1 className="dashboard">Dashboard</h1>
-      <div className="toggleBar">
+    <div>
+      <h1 className="dashboard-heading">Dashboard</h1>
+
+      {/* Toggle menu */}
+      <div className="toggle-bar">
         <div
           onClick={() => handleToggle(true)}
-          className={showSummary ? "active" : "notActive"}
+          className={showSummary ? "active" : "not-active"}
         >
           Summary
         </div>
         <div
           onClick={() => handleToggle(false)}
-          className={!showSummary ? "active" : "notActive"}
+          className={!showSummary ? "active" : "not-active"}
         >
           Details
         </div>
       </div>
+
+      {/* Summury */}
       {showSummary ? (
         <>
           <Summary />
@@ -113,9 +117,59 @@ export default function Dashboard() {
       ) : (
         <Deatails />
       )}
-      <p>
-        <span>&#169;</span> 2021 Micro Bank
-      </p>
+      {/* copy right note */}
+      <p className="copyright-note">© 2021 Micro Bank</p>
     </div>
+    // <div className="mainCont">
+    //   <h1 className="dashboard">Dashboard</h1>
+    //   <div className="toggleBar">
+    //     <div
+    //       onClick={() => handleToggle(true)}
+    //       className={showSummary ? "active" : "notActive"}
+    //     >
+    //       Summary
+    //     </div>
+    //     <div
+    //       onClick={() => handleToggle(false)}
+    //       className={!showSummary ? "active" : "notActive"}
+    //     >
+    //       Details
+    //     </div>
+    //   </div>
+    //   {showSummary ? (
+    //     <>
+    //       <Summary />
+    //       <div className="smallCont">
+    //         <div className="services">Services </div>
+    //         <div className="italicText">Micro Bank Services for you</div>
+    //       </div>
+
+    //       <div style={{ padding: "20px", border: "1px solid red" }}>
+    //         <p>Current service</p>
+    //         {userDetails?.currentServices?.map((service: any) => (
+    //           <CurrentService key={service.id} service={service} />
+    //         ))}
+    //       </div>
+    //       <div
+    //         style={{
+    //           padding: "20px",
+    //           border: "1px solid teal",
+    //           marginTop: "20px",
+    //         }}
+    //       >
+    //         <p>Available Services</p>
+    //         {remainingServices?.map((service: any) => (
+    //           // {availableServices?.map((service: any) => (
+    //           <AvailableService key={service.id} service={service} />
+    //         ))}
+    //       </div>
+    //     </>
+    //   ) : (
+    //     <Deatails />
+    //   )}
+    //   <p>
+    //     <span>&#169;</span> 2021 Micro Bank
+    //   </p>
+    // </div>
   );
 }

@@ -7,10 +7,18 @@
       "dateOfIncorporation": "01-01-2000",
       "currentServices": [
         {
+          "id": 2,
+          "mIcon": "file/servicesMobileView/CurrentAccount.svg",
+          "dIcon": "file/servicesDeskView/CurrentAccount.svg",
+          "rating": 3,
+          "header": "Current Account",
+          "isCurrentService": false
+        },
+        {
           "id": 5,
           "mIcon": "../../assets/file/servicesMobileView/taxPayments.svg",
           "dIcon": "../../assets/file/servicesDeskView/taxPayments.svg",
-          "rating": 0,
+          "rating": 4,
           "header": "Tax Payment",
           "isCurrentService": false
         },
@@ -18,7 +26,7 @@
           "id": 6,
           "mIcon": "../../assets/file/servicesMobileView/loans.svg",
           "dIcon": "../../assets/file/servicesDeskView/loans.svg",
-          "rating": 0,
+          "rating": 5,
           "header": "Loan",
           "isCurrentService": false
         }

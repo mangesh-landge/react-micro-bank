@@ -1,4 +1,4 @@
-.mainCont {
+/* .mainCont {
   overflow-x: hidden;
 }
 
@@ -139,4 +139,241 @@
 .smallCont {
   display: flex;
   margin: 20px;
+} */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
 }
+
+.dashboard-heading {
+  margin: 32px 0 0 24px;
+  text-align: left;
+}
+
+/* toggle-bar */
+.toggle-bar {
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  display: flex;
+  margin: 20px 24px;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  overflow: hidden;
+}
+
+.active {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+  border-top: 3px solid #e8544b;
+  pointer-events: none;
+}
+
+.not-active {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+}
+
+/* Summary */
+.summary {
+  height: 145px;
+  background: #fff0f3;
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.summary h2 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 24px;
+  color: #1a1a1a;
+  background-color: red;
+}
+
+.summary-details {
+  display: flex;
+  gap: 14vw;
+  margin-left: 24px;
+}
+
+.account-number-head {
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.account-number {
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.15px;
+  margin-top: 9.5px;
+}
+
+/* Deatails */
+.details {
+  /* height: 300px; */
+  background: #ffffff;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin: auto;
+  margin: 12px 24px 0;
+  padding: 24px 0;
+}
+
+.details-heading {
+  display: flex;
+  padding: 24px 0 4px 28px;
+  justify-content: flex-start;
+  padding: 12px;
+  margin: auto;
+  max-width: 1284px;
+}
+
+.details-heading p {
+  width: 20%;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 157%;
+  color: #828282;
+}
+
+.details-data {
+  min-height: 46px;
+  background: rgba(244, 245, 253, 0.5);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 98%;
+  max-width: 1286px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.details-data div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.details-data div p {
+  width: 20%;
+  color: #232f34;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.details-action-img1 {
+  width: 22px;
+  height: 15px;
+  margin-right: 20px;
+}
+.details-action-img2 {
+  width: 14px;
+  height: 17px;
+}
+
+.copyright-note {
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 38px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #1a1a1a;
+}
+
+/* Model */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.close-button {
+  float: right;
+  display: flex;
+  padding-right: 30px;
+}
+
+.modal-content {
+  display: flex;
+}
+
+.transac-col {
+  margin: 20px;
+}
+
+.modal-sub-header {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 157%;
+  color: #828282;
+}
+
+.modal-det {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #232f34;
+}
+
+/* 
+.details-table {
+  width: 95%;
+  margin: 20px;
+  background: #ffffff;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex: wrap;
+}
+
+.row-cont {
+  background: rgba(244, 245, 253, 0.5);
+  border: 1px solid #e0e0e0;
+  margin: 10px;
+}
+.rowC {
+  display: flex;
+  flex: wrap;
+  border: 1px solid #e0e0e0;
+  padding-top: 4px;
+} */
