@@ -1,146 +1,3 @@
-/* .mainCont {
-  overflow-x: hidden;
-}
-
-.dashboard {
-  width: 131px;
-  height: 33px;
-  left: 24px;
-  top: 104px;
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  display: flex;
-  align-items: flex-end;
-  color: #1a1a1a;
-  padding: 30px 0px 0px 20px;
-}
-
-.toggleBar {
-  width: 95%;
-  height: 60px;
-  background: #ffffff;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
-  display: flex;
-  margin: 20px;
-  display: flex;
-  justify-content: left;
-  text-align: left;
-}
-
-.active {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 175%;
-  color: #232f34;
-  padding: 20px;
-  border-top: 3px solid #e8544b;
-  pointer-events: none;
-}
-
-.notActive {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 175%;
-  color: #232f34;
-  padding: 20px;
-}
-
-.summary {
-  width: 95%;
-  height: 145px;
-  background: #fff0f3;
-  border: 1px solid rgba(217, 4, 41, 0.2);
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
-  margin: 0px 20px 32px 20px;
-}
-
-.summaryTag {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 25px;
-  display: flex;
-  align-items: flex-end;
-  color: #1a1a1a;
-  padding: 24px;
-}
-
-.row {
-  display: flex;
-  flex: wrap;
-}
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0px 0px 10px 20px;
-}
-
-.capitalDes {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.15px;
-  color: rgba(0, 0, 0, 0.38);
-}
-
-.numbers {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.15px;
-  color: #333333;
-  width: 75px;
-  height: 19px;
-  margin-top: 10px;
-}
-
-.services {
-  width: 58px;
-  height: 19px;
-  left: 24px;
-  top: 410px;
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 19px;
-  display: flex;
-  color: #1a1a1a;
-}
-
-.italicText {
-  font-family: "Open Sans", sans-serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
-  display: flex;
-  color: #1a1a1a;
-}
-
-.smallCont {
-  display: flex;
-  margin: 20px;
-} */
-
 *,
 *::after,
 *::before {
@@ -199,7 +56,7 @@
   box-sizing: border-box;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
   border-radius: 12px;
-  margin-top: 12px;
+  margin: 12px 24px 0;
 }
 
 .summary h2 {
@@ -208,7 +65,7 @@
   line-height: 25px;
   margin: 24px;
   color: #1a1a1a;
-  background-color: red;
+  text-align: left;
 }
 
 .summary-details {
@@ -222,6 +79,7 @@
   font-size: 12px;
   letter-spacing: 0.15px;
   color: rgba(0, 0, 0, 0.38);
+  text-align: left;
 }
 
 .account-number {
@@ -231,7 +89,41 @@
   line-height: 19px;
   letter-spacing: 0.15px;
   margin-top: 9.5px;
+  text-align: left;
 }
+
+/* Microbank services */
+.small-cont {
+  display: flex;
+  margin: 32px 24px 12px;
+}
+
+.services {
+  width: 58px;
+  height: 19px;
+  left: 24px;
+  top: 410px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+}
+
+.italicText {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  color: #1a1a1a;
+}
+
+/* current Services */
+
+/* Available Services */
 
 /* Deatails */
 .details {
@@ -351,29 +243,184 @@
   color: #232f34;
 }
 
-/* 
-.details-table {
-  width: 95%;
-  margin: 20px;
-  background: #ffffff;
-  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding-bottom: 10px;
-}
+/* Media query */
+@media only screen and (max-width: 600px) {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Open Sans;
+    font-style: normal;
+  }
 
-.row {
-  display: flex;
-  flex: wrap;
-}
+  .toggle-bar {
+    margin: 24px 12px 12px;
+  }
 
-.row-cont {
-  background: rgba(244, 245, 253, 0.5);
-  border: 1px solid #e0e0e0;
-  margin: 10px;
+  .dashboard {
+    background-color: #ffffff;
+    padding: 0;
+    min-width: 360px;
+    /* border: 1px solid; */
+  }
+
+  .dashboard > h1 {
+    display: none;
+  }
+
+  /* navigation */
+
+  .navigation {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #8d99ae;
+  }
+
+  .navigation p {
+    border: none;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #8d99ae;
+  }
+
+  #summary-menu {
+    color: #ef233c;
+    border: none;
+    border-bottom: 2px solid #ef233c;
+  }
+
+  /* Summary */
+
+  .summary {
+    margin: 15px 10px;
+    min-width: 300px;
+    /* border: 1px solid #8d99ae; */
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 270px;
+    /* background-color: #ffffff; */
+  }
+
+  .summary > h2 {
+    margin: 24;
+  }
+
+  .summary-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .summary-details div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .account-number-head {
+    text-align: left;
+  }
+
+  .account-number {
+    text-align: left;
+  }
+
+  /* Microbank services */
+
+  .small-cont {
+    margin: 32px 12px 12px;
+  }
+
+  /* current services  */
+
+  .desk-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+
+  .current-services {
+    position: relative;
+    background: #2b2d42;
+    border-radius: 0;
+    width: 100%;
+    height: 153px;
+    padding-right: 10px;
+  }
+
+  .current-services h2 {
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  .current-services-details {
+    position: absolute;
+    top: 38px;
+    left: 10px;
+    margin: 0 auto;
+    width: 95%;
+    min-width: 340px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    height: 98px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .current-sub-service,
+  .available-sub-service {
+    width: 100px;
+    height: 50px;
+  }
+
+  .current-sub-service p,
+  .available-sub-service p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .current-sub-service img,
+  .available-sub-service img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Available services */
+
+  .available-services h2 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    padding: 0;
+    margin-left: 9px;
+  }
+
+  .available-services-details {
+    position: relative;
+    margin: 9px 9px 13px;
+    border: 1px solid #8d99ae;
+    box-sizing: border-box;
+    border-radius: 4px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .details {
+    margin: auto 12px;
+  }
 }
-.rowC {
-  display: flex;
-  flex: wrap;
-  border: 1px solid #e0e0e0;
-  padding-top: 4px;
-} */

@@ -6,19 +6,19 @@ export default function Summary() {
       <div className="summary">
         <h2>Summary</h2>
         <div className="summary-details">
-          <div className="summary-account-number">
+          <div>
             <p className="account-number-head">Account Number</p>
             <h3 className="account-number">67238744</h3>
           </div>
 
-          <div className="summary-income">
-            <p className="account-number-head income-spend">Income</p>
-            <h3>$20,00,000</h3>
+          <div>
+            <p className="account-number-head ">Income</p>
+            <h3 className="account-number">$20,00,000</h3>
           </div>
 
-          <div className="summary-spends">
-            <p className="account-number-head income-spend">Spends</p>
-            <h3>$11,00,000</h3>
+          <div>
+            <p className="account-number-head ">Spends</p>
+            <h3 className="account-number">$11,00,000</h3>
           </div>
         </div>
       </div>
