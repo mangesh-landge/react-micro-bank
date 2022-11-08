@@ -10,7 +10,7 @@
           "id": 1,
           "mIcon": "file/servicesMobileView/wallet.svg",
           "dIcon": "file/servicesDeskView/wallet.svg",
-          "rating": 3,
+          "rating": 1,
           "header": "Wallet",
           "isCurrentService": false
         },
@@ -18,7 +18,7 @@
           "id": 2,
           "mIcon": "file/servicesMobileView/currentAccount.svg",
           "dIcon": "file/servicesDeskView/currentAccount.svg",
-          "rating": 4,
+          "rating": 3,
           "header": "Current Account",
           "isCurrentService": false
         },

@@ -87,7 +87,7 @@ export const deleteUserDataFailure = (message: any) => {
 };
 
 export const getUserDetails = (payload: any) => async (dispatch: any) => {
-  console.log("GET_PAYLOAD", payload);
+  // console.log("GET_PAYLOAD", payload);
   dispatch(getUserDataRequest());
   try {
     let config = { headers: { Authorization: payload?.token } };
@@ -96,7 +96,6 @@ export const getUserDetails = (payload: any) => async (dispatch: any) => {
       `http://localhost:3333/users/${payload?.userId}`,
       config
     );
-    console.log("USER", data);
     dispatch(getUserDataSuccess(data));
     return data;
   } catch (error) {
@@ -106,10 +105,11 @@ export const getUserDetails = (payload: any) => async (dispatch: any) => {
 };
 
 export const patchUserData = (payload: any) => async (dispatch: any) => {
+  console.log("GET_PATCHED_PAYLOAD", payload);
   dispatch(patchUserDataRequest());
   try {
     const { data } = await axios.patch(
-      `http://localhost:3333/users/${payload?.userId}`,
+      `http://localhost:3333/users/${payload?.id}`,
       payload
     );
     dispatch(patchUserDataSuccess(data));
