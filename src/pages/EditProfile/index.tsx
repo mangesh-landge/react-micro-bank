@@ -9,6 +9,7 @@ import { ImageIcon } from "../../icons/Icons";
 import "./index.css";
 import unHideIcon from "../../assets/file/hide_unhide.svg";
 import hideIcon from "../../assets/file/hide_logo.svg";
+import Navbar from "../../components/navBar";
 
 interface SignUpValues {
   avatar?: string;
@@ -40,17 +41,32 @@ const SignupSchema = Yup.object().shape({
 export default function EditProfile() {
   // const navigate = useNavigate();
   // const { id } = useParams();
+
+  const userDetails = useSelector((state: any) => state?.login.data);
+  //confirmPassword
+  const userdata: any = {
+    avatar: userDetails.avatar,
+    companyName: userDetails.companyName,
+    email: userDetails.email,
+  };
   const [isHide, setIsHide] = useState<boolean>(true);
   const [isHideConfirmPass, setIsHideConfirmPass] = useState<boolean>(true);
   const [isHideOldPass, setIsHideOldPass] = useState<boolean>(true);
+  const [profileData, setProfileData] = useState<any>({ userdata });
   return (
     <div>
+      <Navbar />
       <h1 className="edit-text">Edit profile</h1>
       <div className="edit-container">
         <div className="image-cont">
           <div className="image-sub">
             <div className="image-profile">
-              <ImageIcon />
+              {/* <ImageIcon /> */}
+              <img
+                // className="star-with-baground"
+                src={userdata.avatar}
+                alt="profile"
+              />
             </div>
           </div>
           <div className="dropimage-con">Browse Image</div>
@@ -58,9 +74,9 @@ export default function EditProfile() {
         <div className="form-component">
           <Formik
             initialValues={{
-              avatar: "",
-              companyName: "",
-              email: "",
+              avatar: userDetails.avatarUrl,
+              companyName: userDetails.companyName,
+              email: userDetails.email,
               oldPassword: "",
               password: "",
               confirmPassword: "",

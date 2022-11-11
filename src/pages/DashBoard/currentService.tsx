@@ -14,15 +14,13 @@ export default function CurrentService({ service, setEditedService }: any) {
     handleRating(service, selectedStar);
   }, [selectedStar]);
 
-  const handleRating = (service: any, selectedStar: number) => {
-    service.rating = selectedStar;
+  const handleRating = (service: any, givenStar: number) => {
+    service.rating = givenStar;
+    setSelectedStar(givenStar);
     return setEditedService(service);
   };
   return (
-    <div
-      className="current-sub-service"
-      onClick={() => handleRating(service, selectedStar)}
-    >
+    <div className="current-sub-service">
       <img
         className={isMobile ? "mobile-logo" : "desk-logo"}
         src={imgPathReader(isMobile ? service.mIcon : service.dIcon)}
@@ -39,14 +37,14 @@ export default function CurrentService({ service, setEditedService }: any) {
                 key={el}
                 src={greenStarIcon}
                 alt="star"
-                onClick={() => setSelectedStar(el)}
+                onClick={() => handleRating(service, el)}
               />
             );
           } else {
             return (
               <img
                 key={el}
-                onClick={() => setSelectedStar(el)}
+                onClick={() => handleRating(service, el)}
                 src={starIcon}
                 alt="star"
               />

@@ -1,0 +1,155 @@
+.sub-cont {
+  /* padding: 10px; */
+  width: 100vw;
+  background-color: #ffffff;
+  height: 72px;
+}
+
+.nav {
+  display: block;
+}
+
+.micro {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 30px;
+  color: #d90429;
+}
+
+.bank {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  margin-left: 10px;
+}
+
+.separator {
+  width: 1px;
+  height: 40px;
+  background: #c4c4c4;
+  margin-left: 30px;
+}
+
+.comp-name {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  color: #1a1a1a;
+  margin-left: 30px;
+}
+
+.profile {
+  float: right;
+  display: flex;
+}
+
+.bell-icon,
+.arrow-icon {
+  margin-right: 30px;
+}
+
+.avatar {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-btn {
+  border: none;
+  background-color: transparent;
+}
+.dropdown-content {
+  position: absolute;
+  min-width: 321px;
+  height: 348px;
+  z-index: 1;
+  right: 0px;
+  top: 60px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: left;
+  padding: 20px;
+}
+
+.avatar-big {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.username {
+  display: flex;
+  text-align: center;
+  justify-content: left;
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 19px;
+  color: #333333;
+  letter-spacing: 0.15px;
+  margin-bottom: 20px;
+}
+
+.email {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  text-decoration-line: underline;
+  color: #d90429;
+  margin-bottom: 20px;
+}
+
+.items {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .nav {
+    display: block;
+  }
+  .bank {
+    margin-left: 0px;
+  }
+  .comp-name {
+    margin-left: 0px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .dropdown {
+    display: none;
+  }
+  .separator {
+    display: none;
+  }
+  .profile {
+    margin-top: 40px;
+    padding-right: 0px;
+  }
+}

@@ -5,11 +5,13 @@ import CreateAccount from "./pages/SignUp";
 import Dashboard from "./pages/DashBoard";
 import EditProfile from "./pages/EditProfile";
 import Login from "./pages/Login";
+import Navbar from "./components/navBar";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />

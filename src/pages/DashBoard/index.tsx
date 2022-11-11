@@ -13,6 +13,7 @@ import {
   patchUserData,
 } from "../../redux/dashboard/actionCreators";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import Navbar from "../../components/navBar";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -22,9 +23,7 @@ export default function Dashboard() {
   const { userId } = useSelector((state: any) => state?.login);
   // const { token } = useSelector((state: any) => state?.signUp);
   // const { userId } = useSelector((state: any) => state?.signUp);
-  const userDetails = useSelector(
-    (state: any) => state?.login.data || state?.signUp.data
-  );
+  const userDetails = useSelector((state: any) => state?.login.data);
   const dashboardUserDetails = useSelector((state: any) => state?.dashBoard);
   const { availableServices } = useSelector(
     (state: any) => state?.dashBoardAvailableServices
@@ -53,14 +52,14 @@ export default function Dashboard() {
   // console.log("DASHBORD_AUTH", isAuth);
   // console.log("DASHBORD_TOKEN", token);
   // console.log("DASHBORD_USERID", userId);
-  // console.log("DASHBORD_DATA", userDetails);
+  console.log("DASHBORD_DATA", userDetails);
   // console.log("DASHBORD_DATAS", userDetails?.currentServices);
   // console.log("DASBOAD_AVAILABLE_SERVICE", availableServices);
   // console.log("USER_DETAILS", dashboardUserDetails);
 
   const [showSummary, setShowSummary] = useState(true);
   // const [userData, setUserData] = useState<any>([]);
-  const [editedService, setEditedService] = useState<any>(0);
+  const [editedService, setEditedService] = useState<any>();
   const [editedUserDetails, setEditedUserDetails] = useState<any>();
   useEffect(() => {
     dispatch(getAvailableServices());
@@ -68,8 +67,10 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    handleEditedServices(editedService);
-    dispatch(patchUserData(editedUserDetails));
+    if (editedService != undefined) {
+      handleEditedServices(editedService);
+      if (editedService) dispatch(patchUserData(editedUserDetails));
+    }
   }, [editedService]);
 
   const handleToggle = (condition: boolean) => {
@@ -88,36 +89,38 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 className="dashboard-heading">Dashboard</h1>
+      <Navbar />
+      <div className="dashbord-body">
+        <h1 className="dashboard-heading">Dashboard</h1>
 
-      {/* Toggle menu */}
-      <div className="toggle-bar">
-        <div
-          onClick={() => handleToggle(true)}
-          className={showSummary ? "active" : "not-active"}
-        >
-          Summary
-        </div>
-        <div
-          onClick={() => handleToggle(false)}
-          className={!showSummary ? "active" : "not-active"}
-        >
-          Details
-        </div>
-      </div>
-
-      {/* Summury */}
-      {showSummary ? (
-        <>
-          <Summary />
-          <div className="small-cont">
-            <div className="services">Services </div>
-            <div className="italicText">Micro Bank Services for you</div>
+        {/* Toggle menu */}
+        <div className="toggle-bar">
+          <div
+            onClick={() => handleToggle(true)}
+            className={showSummary ? "active" : "not-active"}
+          >
+            Summary
           </div>
+          <div
+            onClick={() => handleToggle(false)}
+            className={!showSummary ? "active" : "not-active"}
+          >
+            Details
+          </div>
+        </div>
 
-          <div className="current-services">
-            <h2 className="service-head">Current Services</h2>
-            {/* <DragDropContext onDragEnd={() => {}}>
+        {/* Summury */}
+        {showSummary ? (
+          <>
+            <Summary />
+            <div className="small-cont">
+              <div className="services">Services </div>
+              <div className="italicText">Micro Bank Services for you</div>
+            </div>
+
+            <div className="current-services">
+              <h2 className="service-head">Current Services</h2>
+              {/* <DragDropContext onDragEnd={() => {}}>
               <div className="current-services-details">
                 {userDetails?.currentServices?.map((service: any) => (
                   <Droppable droppableId="currentService">
@@ -134,41 +137,42 @@ export default function Dashboard() {
                 ))}
               </div>
             </DragDropContext> */}
-            <div className="current-services-details">
-              {userDetails?.currentServices?.map((service: any) => (
-                <CurrentService
-                  // onClick={handleRating(service, selectedStar)}
-                  key={service.id}
-                  service={service}
-                  // selectedStar={selectedStar}
-                  setEditedService={setEditedService}
-                />
-              ))}
+              <div className="current-services-details">
+                {userDetails?.currentServices?.map((service: any) => (
+                  <CurrentService
+                    // onClick={handleRating(service, selectedStar)}
+                    key={service.id}
+                    service={service}
+                    // selectedStar={selectedStar}
+                    setEditedService={setEditedService}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="available-services">
-            <h2>Available Services</h2>
-            <div className="available-services-details">
-              {remainingServices?.map((service: any) => (
-                // <Droppable droppableId="availableService">
-                //   {(provided) => (
-                //     <AvailableService
-                //       index={service.id}
-                //       key={service.id}
-                //       service={service}
-                //       ref={provided.innerRef}
-                //       {...provided.droppableProps}
-                //     />
-                //   )}
-                // </Droppable>
-                <AvailableService key={service.id} service={service} />
-              ))}
+            <div className="available-services">
+              <h2>Available Services</h2>
+              <div className="available-services-details">
+                {remainingServices?.map((service: any) => (
+                  // <Droppable droppableId="availableService">
+                  //   {(provided) => (
+                  //     <AvailableService
+                  //       index={service.id}
+                  //       key={service.id}
+                  //       service={service}
+                  //       ref={provided.innerRef}
+                  //       {...provided.droppableProps}
+                  //     />
+                  //   )}
+                  // </Droppable>
+                  <AvailableService key={service.id} service={service} />
+                ))}
+              </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <Deatails />
-      )}
+          </>
+        ) : (
+          <Deatails />
+        )}
+      </div>
       {/* copy right note */}
       <p className="copyright-note">© 2021 Micro Bank</p>
     </div>

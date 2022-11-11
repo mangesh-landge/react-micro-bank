@@ -6,8 +6,11 @@
   margin: 0;
   font-family: Open Sans;
   font-style: normal;
+  /* height: 90vh; */
 }
-
+.dashbord-body {
+  min-height: 85vh;
+}
 .dashboard-heading {
   margin: 32px 0 0 24px;
   text-align: left;
@@ -238,7 +241,7 @@
 }
 
 .copyright-note {
-  bottom: 0;
+  /* bottom: 0; */
   position: absolute;
   text-align: center;
   width: 100%;
@@ -247,6 +250,7 @@
   font-size: 12px;
   line-height: 16px;
   color: #1a1a1a;
+  padding: 4px 0;
 }
 
 /* Model */

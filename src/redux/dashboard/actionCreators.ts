@@ -105,7 +105,6 @@ export const getUserDetails = (payload: any) => async (dispatch: any) => {
 };
 
 export const patchUserData = (payload: any) => async (dispatch: any) => {
-  console.log("GET_PATCHED_PAYLOAD", payload);
   dispatch(patchUserDataRequest());
   try {
     const { data } = await axios.patch(
