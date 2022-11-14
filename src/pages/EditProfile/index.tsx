@@ -60,14 +60,10 @@ export default function EditProfile() {
       <div className="edit-container">
         <div className="image-cont">
           <div className="image-sub">
-            <div className="image-profile">
-              {/* <ImageIcon /> */}
-              <img
-                // className="star-with-baground"
-                src={userdata.avatar}
-                alt="profile"
-              />
-            </div>
+            {/* <div className="image-profile">
+              <ImageIcon />
+            </div> */}
+            <img width={180} height={180} src={userdata.avatar} alt="profile" />
           </div>
           <div className="dropimage-con">Browse Image</div>
         </div>

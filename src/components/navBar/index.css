@@ -1,12 +1,32 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+}
+
 .sub-cont {
-  /* padding: 10px; */
+  padding: 10px;
   width: 100vw;
+  max-width: 1366px;
+  display: flex;
+  justify-content: space-between;
   background-color: #ffffff;
   height: 72px;
 }
 
 .nav {
-  display: block;
+  display: flex;
+  align-items: center;
+  margin: auto 24px;
+}
+
+.nav-logo {
+  display: flex;
+  cursor: pointer;
 }
 
 .micro {
@@ -47,8 +67,8 @@
 }
 
 .profile {
-  float: right;
   display: flex;
+  align-items: center;
 }
 
 .bell-icon,
@@ -89,6 +109,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .username {
@@ -102,7 +123,7 @@
   line-height: 19px;
   color: #333333;
   letter-spacing: 0.15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .email {

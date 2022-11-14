@@ -10,7 +10,7 @@
           "id": 1,
           "mIcon": "file/servicesMobileView/wallet.svg",
           "dIcon": "file/servicesDeskView/wallet.svg",
-          "rating": 5,
+          "rating": 4,
           "header": "Wallet",
           "isCurrentService": false
         },
@@ -18,7 +18,7 @@
           "id": 2,
           "mIcon": "file/servicesMobileView/currentAccount.svg",
           "dIcon": "file/servicesDeskView/currentAccount.svg",
-          "rating": 3,
+          "rating": 0,
           "header": "Current Account",
           "isCurrentService": false
         },
@@ -26,7 +26,7 @@
           "id": 3,
           "mIcon": "file/servicesMobileView/investments.svg",
           "dIcon": "file/servicesDeskView/investments.svg",
-          "rating": 3,
+          "rating": 0,
           "header": "Investments",
           "isCurrentService": false
         }

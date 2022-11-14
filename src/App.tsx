@@ -6,19 +6,22 @@ import Dashboard from "./pages/DashBoard";
 import EditProfile from "./pages/EditProfile";
 import Login from "./pages/Login";
 import Navbar from "./components/navBar";
+import AppRoute from "./Routes/routes";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        {/* <Navbar /> */}
+      {/* <BrowserRouter>
+
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/edit-profile" element={<EditProfile />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      {/* <Navbar /> */}
+      <AppRoute />
     </div>
   );
 }
