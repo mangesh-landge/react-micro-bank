@@ -28,8 +28,12 @@ export default function Dashboard() {
   const { availableServices } = useSelector(
     (state: any) => state?.dashBoardAvailableServices
   );
+  const storeData = useSelector((state: any) => state);
 
   function getRemaingServices(a1: Array<any>, a2: Array<any>) {
+    console.log("STORE", storeData);
+    console.log("A1", a1);
+    console.log("A2", a2);
     let array = a1;
     for (let i = 0; i < array?.length; i++) {
       let flag = false;
@@ -57,8 +61,7 @@ export default function Dashboard() {
   // console.log("DASBOAD_AVAILABLE_SERVICE", availableServices);
   // console.log("USER_DETAILS", dashboardUserDetails);
 
-  const [showSummary, setShowSummary] = useState(true);
-  // const [userData, setUserData] = useState<any>([]);
+  const [showSummary, setShowSummary] = useState<boolean>(true);
   const [editedService, setEditedService] = useState<any>();
   const [editedUserDetails, setEditedUserDetails] = useState<any>();
   useEffect(() => {
@@ -75,6 +78,7 @@ export default function Dashboard() {
 
   const handleToggle = (condition: boolean) => {
     setShowSummary(condition);
+    console.log("ON", condition);
   };
 
   const handleEditedServices = (service: any) => {
@@ -86,7 +90,7 @@ export default function Dashboard() {
     ].sort((a, b) => a.id - b.id);
     return setEditedUserDetails(userDetails);
   };
-
+  //data-testid="inputEmail"
   return (
     <div>
       <Navbar />
@@ -96,12 +100,14 @@ export default function Dashboard() {
         {/* Toggle menu */}
         <div className="toggle-bar">
           <div
+            id="showSummary"
             onClick={() => handleToggle(true)}
             className={showSummary ? "active" : "not-active"}
           >
             Summary
           </div>
           <div
+            id="showDeatils"
             onClick={() => handleToggle(false)}
             className={!showSummary ? "active" : "not-active"}
           >
@@ -140,10 +146,8 @@ export default function Dashboard() {
               <div className="current-services-details">
                 {userDetails?.currentServices?.map((service: any) => (
                   <CurrentService
-                    // onClick={handleRating(service, selectedStar)}
                     key={service.id}
                     service={service}
-                    // selectedStar={selectedStar}
                     setEditedService={setEditedService}
                   />
                 ))}

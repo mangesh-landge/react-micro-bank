@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { CloseIcon, DownloadIcon, Visibility } from "../../icons/Icons";
 import hideIcon from "../../assets/file/hide_logo.svg";
 import downloadIcon from "../../assets/file/download.svg";
 import clsoeIcon from "../../assets/file/close.svg";
@@ -84,7 +83,7 @@ export default function Deatails() {
         {transactionsData?.map((item: any) => (
           <>
             {/* {setModelData(item)} */}
-            <div>
+            <div key={item.transaction_ID}>
               <p>{item.transaction_ID}</p>
               <p>{item.date}</p>
               <p>{item.amount}</p>
@@ -98,6 +97,7 @@ export default function Deatails() {
                   alt="hidelogo"
                 />
                 <img
+                  id="modal"
                   onClick={() => toggleModal(item)}
                   className="details-action-img2"
                   src={downloadIcon}
@@ -116,7 +116,11 @@ export default function Deatails() {
       >
         <div className="modal-header">
           <div className="transac-det">Transaction Details</div>
-          <div className="close-button" onClick={toggleModal}>
+          <div
+            data-testid="modal"
+            className="close-button"
+            onClick={toggleModal}
+          >
             <img
               className="details-action-img2"
               src={clsoeIcon}

@@ -12,7 +12,7 @@ export default function AvailableService(service: any) {
       <img
         className={isMobile ? "mobile-logo" : "desk-logo"}
         src={imgPathReader(
-          isMobile ? service?.service.mIcon : service?.service.dIcon
+          isMobile ? service?.service?.mIcon : service?.service?.dIcon
         )}
         alt="logo"
       />

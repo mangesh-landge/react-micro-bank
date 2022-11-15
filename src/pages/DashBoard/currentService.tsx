@@ -23,7 +23,7 @@ export default function CurrentService({ service, setEditedService }: any) {
     <div className="current-sub-service">
       <img
         className={isMobile ? "mobile-logo" : "desk-logo"}
-        src={imgPathReader(isMobile ? service.mIcon : service.dIcon)}
+        src={imgPathReader(isMobile ? service?.mIcon : service?.dIcon)}
         alt="logo"
       />
       <p>{service.header}</p>
@@ -33,6 +33,7 @@ export default function CurrentService({ service, setEditedService }: any) {
           if (el <= service.rating) {
             return (
               <img
+                id="starClick"
                 className="star-with-baground"
                 key={el}
                 src={greenStarIcon}
@@ -43,6 +44,7 @@ export default function CurrentService({ service, setEditedService }: any) {
           } else {
             return (
               <img
+                id="starClick"
                 key={el}
                 onClick={() => handleRating(service, el)}
                 src={starIcon}

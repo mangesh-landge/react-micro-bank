@@ -10,7 +10,7 @@
           "id": 1,
           "mIcon": "file/servicesMobileView/wallet.svg",
           "dIcon": "file/servicesDeskView/wallet.svg",
-          "rating": 4,
+          "rating": 0,
           "header": "Wallet",
           "isCurrentService": false
         },

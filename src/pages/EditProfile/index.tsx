@@ -79,7 +79,7 @@ export default function EditProfile() {
             }}
             validationSchema={SignupSchema}
             onSubmit={(values: SignUpValues) => {
-              console.log(values);
+              console.log("Edit Values", values);
             }}
           >
             {({ errors, touched }) => (
