@@ -13,34 +13,27 @@ function PrivateRoute({ children }: PropsWithChildren<{}>) {
 
 export default function AppRoute() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/create-account"
-          element={
-            <PrivateRoute>
-              <CreateAccount />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/edit-profile"
-          element={
-            <PrivateRoute>
-              <EditProfile />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/create-account" element={<CreateAccount />} />
+      <Route
+        path="/edit-profile"
+        element={
+          <PrivateRoute>
+            <EditProfile />
+          </PrivateRoute>
+        }
+      />
+    </Routes>
+    // </BrowserRouter>
   );
 }

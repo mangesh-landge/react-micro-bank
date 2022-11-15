@@ -21,7 +21,9 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       {/* <Navbar /> */}
-      <AppRoute />
+      <BrowserRouter>
+        <AppRoute />
+      </BrowserRouter>
     </div>
   );
 }

@@ -54,8 +54,8 @@ export default function CreateAccount() {
   const [isHide, setIsHide] = useState<boolean>(true);
   const [isHideConfirmPass, setIsHideConfirmPass] = useState<boolean>(true);
 
-  const handleSubmit = async (values: SignUpValues) => {
-    await dispatch(userSignUp(values));
+  const handleSubmit = (values: SignUpValues) => {
+    dispatch(userSignUp(values));
     navigate("/login");
   };
   return (
@@ -85,6 +85,7 @@ export default function CreateAccount() {
             }}
             validationSchema={SignupSchema}
             onSubmit={(values: SignUpValues) => {
+              console.log(values);
               handleSubmit(values);
             }}
           >
@@ -92,14 +93,16 @@ export default function CreateAccount() {
               <Form>
                 <p className="form-lable">Full Name</p>
                 <div className="form-input-box">
-                  <Field name="fullName" />
+                  <Field data-testid="fullName" name="fullName" />
                 </div>
                 {errors.fullName && touched.fullName ? (
                   <div className="form-error">{errors.fullName}</div>
                 ) : null}
+
                 <p className="form-lable">Date of Incorporation</p>
                 <div className="form-input-box ">
                   <Field
+                    data-testid="dateOfIncorporation"
                     className="input-date"
                     name="dateOfIncorporation"
                     type="date"
@@ -108,17 +111,24 @@ export default function CreateAccount() {
                 {errors.dateOfIncorporation && touched.dateOfIncorporation ? (
                   <div className="form-error">{errors.dateOfIncorporation}</div>
                 ) : null}
+
                 <p className="form-lable">Email</p>
                 <div className="form-input-box">
-                  <Field name="email" type="email" />
+                  <Field data-testid="email" name="email" type="email" />
                 </div>
                 {errors.email && touched.email ? (
                   <div className="form-error">{errors.email}</div>
                 ) : null}
+
                 <p className="form-lable">Password</p>
                 <div className="form-input-box">
-                  <Field name="password" type={isHide ? "password" : "text"} />
+                  <Field
+                    data-testid="password"
+                    name="password"
+                    type={isHide ? "password" : "text"}
+                  />
                   <img
+                    data-testid="Phide"
                     onClick={() => setIsHide(!isHide)}
                     src={isHide ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -127,13 +137,16 @@ export default function CreateAccount() {
                 {errors.password && touched.password ? (
                   <div className="form-error">{errors.password}</div>
                 ) : null}
+
                 <p className="form-lable">Confirm Password</p>
                 <div className="form-input-box">
                   <Field
+                    data-testid="confirmPassword"
                     name="confirmPassword"
                     type={isHideConfirmPass ? "password" : "text"}
                   />
                   <img
+                    data-testid="Chide"
                     onClick={() => setIsHideConfirmPass(!isHideConfirmPass)}
                     src={isHideConfirmPass ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -144,6 +157,7 @@ export default function CreateAccount() {
                 ) : null}
 
                 <input
+                  data-testid="createAccBtn"
                   className="create-account-button"
                   type="submit"
                   value="Create an Account"

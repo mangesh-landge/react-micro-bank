@@ -90,6 +90,17 @@
         }
       ],
       "id": "ldUypK9"
+    },
+    {
+      "email": "admin10@gmail.com",
+      "password": "$2a$10$o26Gd77OBqcsUXSzSggdpuKd.Q01OHssEiILr3b.G3GP4stbfoVdS",
+      "fullName": "Dinesh",
+      "dateOfIncorporation": "2022-11-11",
+      "confirmPassword": "Admin@123",
+      "companyName": "",
+      "avatar": "",
+      "currentServices": [],
+      "id": "1c5lfYa"
     }
   ],
   "availableServices": [

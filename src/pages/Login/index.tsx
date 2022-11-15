@@ -43,11 +43,11 @@ interface FormValues {
 
 export default function Login() {
   const navigate = useNavigate();
-  const { isAuth } = useSelector((state: any) => state.login);
+  const { isAuth } = useSelector((state: any) => state?.login);
   const dispatch: Dispatch<any> = useDispatch();
 
-  const handleSubmit = async (values: FormValues) => {
-    await dispatch(userLogin(values));
+  const handleSubmit = (values: FormValues) => {
+    dispatch(userLogin(values));
   };
 
   const [isHide, setIsHide] = useState<boolean>(true);
@@ -86,7 +86,11 @@ export default function Login() {
               <Form>
                 <p className="form-lable">Email or Phone</p>
                 <div className="form-input-box">
-                  <Field name="email" validate={validateEmail} />
+                  <Field
+                    data-testid="inputEmail"
+                    name="email"
+                    validate={validateEmail}
+                  />
                 </div>
                 {errors.email && touched.email && (
                   <div className="form-error">{errors.email}</div>
@@ -95,11 +99,13 @@ export default function Login() {
                 <p className="form-lable">Password</p>
                 <div className="form-input-box">
                   <Field
+                    data-testid="inputPass"
                     name="password"
                     type={isHide ? "password" : "text"}
                     validate={validatePassword}
                   />
                   <img
+                    data-testid="hide"
                     onClick={() => setIsHide(!isHide)}
                     src={isHide ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -114,7 +120,12 @@ export default function Login() {
                   <a href="">Forgot Password?</a>
                 </p>
 
-                <input className="login-button" type="submit" value="Login" />
+                <input
+                  data-testid="loginBtn"
+                  className="login-button"
+                  type="submit"
+                  value="Login"
+                />
 
                 <p className="to-create-account">
                   Don't have an account?{" "}

@@ -45,9 +45,9 @@ export default function EditProfile() {
   const userDetails = useSelector((state: any) => state?.login.data);
   //confirmPassword
   const userdata: any = {
-    avatar: userDetails.avatar,
-    companyName: userDetails.companyName,
-    email: userDetails.email,
+    avatar: userDetails?.avatar,
+    companyName: userDetails?.companyName,
+    email: userDetails?.email,
   };
   const [isHide, setIsHide] = useState<boolean>(true);
   const [isHideConfirmPass, setIsHideConfirmPass] = useState<boolean>(true);
@@ -70,9 +70,9 @@ export default function EditProfile() {
         <div className="form-component">
           <Formik
             initialValues={{
-              avatar: userDetails.avatarUrl,
-              companyName: userDetails.companyName,
-              email: userDetails.email,
+              avatar: userDetails?.avatarUrl,
+              companyName: userDetails?.companyName,
+              email: userDetails?.email,
               oldPassword: "",
               password: "",
               confirmPassword: "",
@@ -92,7 +92,7 @@ export default function EditProfile() {
 
                 <p className="form-lable">Company Name</p>
                 <div className="form-input-box">
-                  <Field name="companyName" />
+                  <Field data-testid="companyName" name="companyName" />
                 </div>
                 {errors.companyName && touched.companyName ? (
                   <div className="form-error">{errors.companyName}</div>
@@ -100,7 +100,7 @@ export default function EditProfile() {
 
                 <p className="form-lable">Email</p>
                 <div className="form-input-box">
-                  <Field name="email" type="email" />
+                  <Field data-testid="email" name="email" type="email" />
                 </div>
                 {errors.email && touched.email ? (
                   <div className="form-error">{errors.email}</div>
@@ -109,10 +109,12 @@ export default function EditProfile() {
                 <p className="form-lable">Old Password</p>
                 <div className="form-input-box">
                   <Field
+                    data-testid="oldPassword"
                     name="oldPassword"
                     type={isHideOldPass ? "password" : "text"}
                   />
                   <img
+                    data-testid="oHide"
                     onClick={() => setIsHideOldPass(!isHideOldPass)}
                     src={isHideOldPass ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -124,8 +126,13 @@ export default function EditProfile() {
 
                 <p className="form-lable">Password</p>
                 <div className="form-input-box">
-                  <Field name="password" type={isHide ? "password" : "text"} />
+                  <Field
+                    data-testid="password"
+                    name="password"
+                    type={isHide ? "password" : "text"}
+                  />
                   <img
+                    data-testid="pHide"
                     onClick={() => setIsHide(!isHide)}
                     src={isHide ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -138,10 +145,12 @@ export default function EditProfile() {
                 <p className="form-lable">Confirm Password</p>
                 <div className="form-input-box">
                   <Field
+                    data-testid="confirmPassword"
                     name="confirmPassword"
                     type={isHideConfirmPass ? "password" : "text"}
                   />
                   <img
+                    data-testid="cHide"
                     onClick={() => setIsHideConfirmPass(!isHideConfirmPass)}
                     src={isHideConfirmPass ? unHideIcon : hideIcon}
                     alt="unhide"
@@ -153,6 +162,7 @@ export default function EditProfile() {
 
                 <div className="form-button">
                   <input
+                    data-testid="updateBtn"
                     className="update-account-button"
                     type="submit"
                     value="Update"

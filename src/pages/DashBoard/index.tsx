@@ -52,7 +52,7 @@ export default function Dashboard() {
   // console.log("DASHBORD_AUTH", isAuth);
   // console.log("DASHBORD_TOKEN", token);
   // console.log("DASHBORD_USERID", userId);
-  console.log("DASHBORD_DATA", userDetails);
+  // console.log("DASHBORD_DATA", userDetails);
   // console.log("DASHBORD_DATAS", userDetails?.currentServices);
   // console.log("DASBOAD_AVAILABLE_SERVICE", availableServices);
   // console.log("USER_DETAILS", dashboardUserDetails);
