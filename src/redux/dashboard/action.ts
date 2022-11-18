@@ -28,20 +28,6 @@ interface PatchUserDataFailure {
   payload: any;
 }
 
-interface DeleteUserDataRequest {
-  type: ActionType.DELETE_USER_DATA_REQUEST;
-}
-
-interface DeleteUserDataSuccess {
-  type: ActionType.DELETE_USER_DATA_SUCCESS;
-  payload: any;
-}
-
-interface DeleteUserDataFailure {
-  type: ActionType.DELETE_USER_DATA_FAILURE;
-  payload: any;
-}
-
 export type GetUserDataAction =
   | GetUserDataRequest
   | GetUserDataSuccess
@@ -51,8 +37,3 @@ export type PatchUserDataAction =
   | PatchUserDataRequest
   | PatchUserDataSuccess
   | PatchUserDataFailure;
-
-export type DeleteUserDataAction =
-  | DeleteUserDataRequest
-  | DeleteUserDataSuccess
-  | DeleteUserDataFailure;

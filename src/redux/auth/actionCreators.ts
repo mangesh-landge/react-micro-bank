@@ -55,6 +55,6 @@ export const userLogin = (payload: any) => async (dispatch: any) => {
   }
 };
 
-export const userLogout = (dispatch: any) => {
+export const userLogout = () => (dispatch: any) => {
   dispatch(logout());
 };

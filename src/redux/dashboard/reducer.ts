@@ -1,9 +1,5 @@
 import { ActionType } from "./actionTypes";
-import {
-  GetUserDataAction,
-  PatchUserDataAction,
-  DeleteUserDataAction,
-} from "./action";
+import { GetUserDataAction, PatchUserDataAction } from "./action";
 
 interface service {
   id: string;
@@ -41,7 +37,7 @@ const userDataInitial: userDataState = {
 
 export const dashBoardReducer = (
   state = userDataInitial,
-  action: GetUserDataAction | PatchUserDataAction | DeleteUserDataAction
+  action: GetUserDataAction | PatchUserDataAction
 ) => {
   switch (action?.type) {
     case ActionType.GET_USER_DATA_REQUEST: {
@@ -105,38 +101,6 @@ export const dashBoardReducer = (
         isLoading: false,
       };
     }
-
-    case ActionType.DELETE_USER_DATA_REQUEST: {
-      return {
-        ...state,
-        isLoading: true,
-      };
-    }
-
-    case ActionType.DELETE_USER_DATA_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        isError: false,
-        id: action?.payload?.id,
-        email: action?.payload?.email,
-        fullName: action?.payload?.fullName,
-        dateOfIncorporation: action?.payload?.dateOfIncorporation,
-        companyName: action?.payload?.companyName,
-        avatar: action?.payload?.avatar,
-        currentServices: action?.payload?.currentServices,
-      };
-    }
-
-    case ActionType.DELETE_USER_DATA_FAILURE: {
-      return {
-        ...state,
-        message: action?.payload?.message,
-        isError: true,
-        isLoading: false,
-      };
-    }
-
     default: {
       return state;
     }

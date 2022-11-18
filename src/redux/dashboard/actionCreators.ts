@@ -1,10 +1,6 @@
 import { ActionType } from "./actionTypes";
 import { Dispatch } from "redux";
-import {
-  GetUserDataAction,
-  PatchUserDataAction,
-  DeleteUserDataAction,
-} from "./action";
+import { GetUserDataAction, PatchUserDataAction } from "./action";
 
 import axios from "axios";
 
@@ -55,32 +51,6 @@ export const patchUserDataFailure = (message: any) => {
   return (dispatch: Dispatch<PatchUserDataAction>) => {
     dispatch({
       type: ActionType.PATCH_USER_DATA_FAILURE,
-      payload: message,
-    });
-  };
-};
-
-export const deleteUserDataRequest = () => {
-  return (dispatch: Dispatch<DeleteUserDataAction>) => {
-    dispatch({
-      type: ActionType.DELETE_USER_DATA_REQUEST,
-    });
-  };
-};
-
-export const deleteUserDataSuccess = (data: any) => {
-  return (dispatch: Dispatch<DeleteUserDataAction>) => {
-    dispatch({
-      type: ActionType.DELETE_USER_DATA_SUCCESS,
-      payload: data,
-    });
-  };
-};
-
-export const deleteUserDataFailure = (message: any) => {
-  return (dispatch: Dispatch<DeleteUserDataAction>) => {
-    dispatch({
-      type: ActionType.DELETE_USER_DATA_FAILURE,
       payload: message,
     });
   };
