@@ -25,6 +25,9 @@ interface userDataState {
 
 interface availableService {
   availableServices: Array<service>;
+  isLoading: boolean;
+  isError: boolean;
+  message: string;
 }
 
 const userDataInitial: userDataState = {
@@ -43,6 +46,9 @@ const userDataInitial: userDataState = {
 
 const initService: availableService = {
   availableServices: [],
+  isLoading: true,
+  isError: false,
+  message: "",
 };
 
 export const availableServiceReducer = (
