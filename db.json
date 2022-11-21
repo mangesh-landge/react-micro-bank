@@ -1,0 +1,164 @@
+{
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$Js.bv6kZIDS7Vr51zMdk/eK9e0mueGrMbodXWuFijZBmlnofq7wH.",
+      "fullName": "Mangesh Landge",
+      "dateOfIncorporation": "01-01-2000",
+      "currentServices": [
+        {
+          "id": 1,
+          "mIcon": "file/servicesMobileView/wallet.svg",
+          "dIcon": "file/servicesDeskView/wallet.svg",
+          "rating": 0,
+          "header": "Wallet",
+          "isCurrentService": false
+        },
+        {
+          "id": 2,
+          "mIcon": "file/servicesMobileView/currentAccount.svg",
+          "dIcon": "file/servicesDeskView/currentAccount.svg",
+          "rating": 0,
+          "header": "Current Account",
+          "isCurrentService": false
+        },
+        {
+          "id": 3,
+          "mIcon": "file/servicesMobileView/investments.svg",
+          "dIcon": "file/servicesDeskView/investments.svg",
+          "rating": 0,
+          "header": "Investments",
+          "isCurrentService": false
+        }
+      ],
+      "companyName": "Perennial",
+      "avatar": "https://alumni.masaischool.com/storage/samurai_2/mangesh.png",
+      "id": "-sVkD4x"
+    },
+    {
+      "email": "admin3@gmail.com",
+      "password": "$2a$10$tBszWC/yQxvfqO7uSwoVTubroRiD8APy1noBcrafroykG7dJtbyHy",
+      "fullName": "Onkar",
+      "dateOfIncorporation": "2022-10-01",
+      "confirmPassword": "Admin@123",
+      "companyName": "Perennial",
+      "avatar": "",
+      "currentServices": [
+        {
+          "id": 1,
+          "mIcon": "file/servicesMobileView/wallet.svg",
+          "dIcon": "file/servicesDeskView/wallet.svg",
+          "rating": 0,
+          "header": "Wallet",
+          "isCurrentService": false
+        },
+        {
+          "id": 2,
+          "mIcon": "file/servicesMobileView/currentAccount.svg",
+          "dIcon": "file/servicesDeskView/currentAccount.svg",
+          "rating": 0,
+          "header": "Current Account",
+          "isCurrentService": false
+        }
+      ],
+      "id": "LV1Wytv"
+    },
+    {
+      "email": "admin4@gmail.com",
+      "password": "$2a$10$e7oFqRHfe/HiHOXGONbOTei0l5NRB2LWfwrn6HsPMO5vVRtFf6k0u",
+      "fullName": "Ashwini",
+      "dateOfIncorporation": "2022-10-01",
+      "confirmPassword": "Admin@123",
+      "companyName": "Perennial",
+      "avatar": "",
+      "currentServices": [
+        {
+          "id": 1,
+          "mIcon": "file/servicesMobileView/wallet.svg",
+          "dIcon": "file/servicesDeskView/wallet.svg",
+          "rating": 4,
+          "header": "Wallet",
+          "isCurrentService": false
+        },
+        {
+          "id": 2,
+          "mIcon": "file/servicesMobileView/currentAccount.svg",
+          "dIcon": "file/servicesDeskView/currentAccount.svg",
+          "rating": 5,
+          "header": "Current Account",
+          "isCurrentService": false
+        }
+      ],
+      "id": "ldUypK9"
+    },
+    {
+      "email": "admin10@gmail.com",
+      "password": "$2a$10$o26Gd77OBqcsUXSzSggdpuKd.Q01OHssEiILr3b.G3GP4stbfoVdS",
+      "fullName": "Dinesh",
+      "dateOfIncorporation": "2022-11-11",
+      "confirmPassword": "Admin@123",
+      "companyName": "",
+      "avatar": "",
+      "currentServices": [],
+      "id": "1c5lfYa"
+    }
+  ],
+  "availableServices": [
+    {
+      "id": 1,
+      "mIcon": "file/servicesMobileView/wallet.svg",
+      "dIcon": "file/servicesDeskView/wallet.svg",
+      "rating": 0,
+      "header": "Wallet",
+      "isCurrentService": false
+    },
+    {
+      "id": 2,
+      "mIcon": "file/servicesMobileView/currentAccount.svg",
+      "dIcon": "file/servicesDeskView/currentAccount.svg",
+      "rating": 0,
+      "header": "Current Account",
+      "isCurrentService": false
+    },
+    {
+      "id": 3,
+      "mIcon": "file/servicesMobileView/investments.svg",
+      "dIcon": "file/servicesDeskView/investments.svg",
+      "rating": 0,
+      "header": "Investments",
+      "isCurrentService": false
+    },
+    {
+      "id": 4,
+      "mIcon": "file/servicesMobileView/payments.svg",
+      "dIcon": "file/servicesDeskView/payments.svg",
+      "rating": 0,
+      "header": "Payments",
+      "isCurrentService": false
+    },
+    {
+      "id": 5,
+      "mIcon": "file/servicesMobileView/taxPayments.svg",
+      "dIcon": "file/servicesDeskView/taxPayments.svg",
+      "rating": 0,
+      "header": "Tax Payment",
+      "isCurrentService": false
+    },
+    {
+      "id": 6,
+      "mIcon": "file/servicesMobileView/loans.svg",
+      "dIcon": "file/servicesDeskView/loans.svg",
+      "rating": 0,
+      "header": "Loan",
+      "isCurrentService": false
+    },
+    {
+      "id": 7,
+      "mIcon": "file/servicesMobileView/payroll.svg",
+      "dIcon": "file/servicesDeskView/payroll.svg",
+      "rating": 0,
+      "header": "Payroll",
+      "isCurrentService": false
+    }
+  ]
+}

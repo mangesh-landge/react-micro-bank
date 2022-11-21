@@ -1,0 +1,477 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+  /* height: 90vh; */
+}
+.dashbord-body {
+  min-height: 85vh;
+}
+.dashboard-heading {
+  margin: 32px 0 0 24px;
+  text-align: left;
+}
+
+/* toggle-bar */
+.toggle-bar {
+  height: 60px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  display: flex;
+  margin: 20px 24px;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  overflow: hidden;
+}
+
+.active {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+  border-top: 3px solid #e8544b;
+  pointer-events: none;
+}
+
+.not-active {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 175%;
+  color: #232f34;
+  padding: 20px;
+}
+
+/* Summary */
+.summary {
+  height: 145px;
+  background: #fff0f3;
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 12px 24px 0;
+}
+
+.summary h2 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 24px;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.summary-details {
+  display: flex;
+  gap: 14vw;
+  margin-left: 24px;
+}
+
+.account-number-head {
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.38);
+  text-align: left;
+}
+
+.account-number {
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.15px;
+  margin-top: 9.5px;
+  text-align: left;
+}
+
+/* Microbank services */
+.small-cont {
+  display: flex;
+  margin: 32px 24px 12px;
+}
+
+.services {
+  width: 58px;
+  height: 19px;
+  left: 24px;
+  top: 410px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+}
+
+.italicText {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  color: #1a1a1a;
+}
+
+/* current Services */
+.current-services,
+.available-services {
+  height: auto;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 12px 24px 24px;
+}
+
+.current-services > h2,
+.available-services > h2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 24px;
+  color: #1a1a1a;
+}
+
+.current-services-details,
+.available-services-details {
+  display: flex;
+  gap: 10%;
+  margin-left: 60px;
+  flex-wrap: wrap;
+}
+
+.current-sub-service p,
+.available-sub-service p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.current-sub-service,
+.available-sub-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  gap: 15px;
+  justify-content: center;
+  margin: 25px 0;
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  gap: 10px;
+}
+
+/* Deatails */
+.details {
+  background: #ffffff;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin: auto;
+  margin: 12px 24px 0;
+  padding: 24px 0;
+}
+
+.details-heading {
+  display: flex;
+  padding: 24px 0 4px 28px;
+  justify-content: flex-start;
+  padding: 12px;
+  margin: auto;
+  max-width: 1284px;
+}
+
+.details-heading p {
+  width: 20%;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 157%;
+  color: #828282;
+}
+
+.details-data {
+  min-height: 46px;
+  background: rgba(244, 245, 253, 0.5);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 98%;
+  max-width: 1286px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.details-data div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.details-data div p {
+  width: 20%;
+  color: #232f34;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.details-action-img1 {
+  width: 22px;
+  height: 15px;
+  margin-right: 20px;
+}
+.details-action-img2 {
+  width: 14px;
+  height: 17px;
+}
+
+.copyright-note {
+  /* bottom: 0; */
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 38px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #1a1a1a;
+  padding: 4px 0;
+}
+
+/* Model */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  width: 100%;
+}
+
+.close-button {
+  float: right;
+  display: flex;
+  padding-right: 30px;
+}
+
+.modal-content {
+  display: flex;
+}
+
+.transac-col {
+  margin: 20px;
+}
+
+.modal-sub-header {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 157%;
+  color: #828282;
+}
+
+.modal-det {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #232f34;
+}
+
+/* Media query */
+@media only screen and (max-width: 600px) {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Open Sans;
+    font-style: normal;
+  }
+
+  .toggle-bar {
+    margin: 24px 12px 12px;
+  }
+
+  .dashboard {
+    background-color: #ffffff;
+    padding: 0;
+    min-width: 360px;
+    /* border: 1px solid; */
+  }
+
+  .dashboard > h1 {
+    display: none;
+  }
+
+  /* navigation */
+
+  .navigation {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #8d99ae;
+  }
+
+  .navigation p {
+    border: none;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #8d99ae;
+  }
+
+  #summary-menu {
+    color: #ef233c;
+    border: none;
+    border-bottom: 2px solid #ef233c;
+  }
+
+  /* Summary */
+
+  .summary {
+    margin: 15px 10px;
+    min-width: 300px;
+    /* border: 1px solid #8d99ae; */
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 270px;
+    /* background-color: #ffffff; */
+  }
+
+  .summary > h2 {
+    margin: 24;
+  }
+
+  .summary-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .summary-details div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .account-number-head {
+    text-align: left;
+  }
+
+  .account-number {
+    text-align: left;
+  }
+
+  /* Microbank services */
+
+  .small-cont {
+    margin: 32px 12px 12px;
+  }
+
+  /* current services  */
+
+  .desk-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+
+  .current-services {
+    position: relative;
+    background: #2b2d42;
+    border-radius: 0;
+    width: 100%;
+    height: 153px;
+    padding-right: 10px;
+  }
+
+  .current-services h2 {
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  .current-services-details {
+    position: absolute;
+    top: 38px;
+    left: 10px;
+    margin: 0 auto;
+    width: 95%;
+    min-width: 340px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    height: 98px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .current-sub-service,
+  .available-sub-service {
+    width: 100px;
+    height: 50px;
+  }
+
+  .current-sub-service p,
+  .available-sub-service p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .current-sub-service img,
+  .available-sub-service img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Available services */
+
+  .available-services h2 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    padding: 0;
+    margin-left: 9px;
+  }
+
+  .available-services-details {
+    position: relative;
+    margin: 9px 9px 13px;
+    border: 1px solid #8d99ae;
+    box-sizing: border-box;
+    border-radius: 4px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .details {
+    margin: auto 12px;
+  }
+}

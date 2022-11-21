@@ -1,17 +1,17 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configStore from "redux-mock-store";
+import { MemoryRouter } from "react-router-dom";
 import thunk from "redux-thunk";
+import Navbar from "../../../components/navBar";
 
 const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
-
-//mock data
+//dashBoardAvailableServices
+//dashBoard
 const middlewares = [thunk];
 const mockStore = configStore(middlewares);
 // const store = mockStore({
@@ -69,16 +69,22 @@ const store = mockStore({
     id: "ldUypK9",
   },
 });
-describe("APP Page", () => {
-  test("renders learn react link", () => {
+describe("Navbar View", () => {
+  it("should render Navbar properly", async () => {
     render(
       <Provider store={store}>
-        <App />
-      </Provider>
+        <Navbar />
+      </Provider>,
+      { wrapper: MemoryRouter }
+    );
+    expect(document.querySelector(".nav")).toBeInTheDocument();
+    waitFor(() =>
+      expect(screen.getByText("Micro").firstChild).toBeInTheDocument()
     );
     // console.log(screen.debug(null, 300000));
-    // const linkElement = screen.getByText(/Login/i);
-    // const linkElement = document.getElementsByClassName(".App");
-    // expect(linkElement).toBeInTheDocument();
+    const btnElement = document.querySelectorAll(".drop-btn")[0];
+    fireEvent.click(btnElement as HTMLElement);
+    const btnElement1 = document.querySelectorAll(".nav-logo")[0];
+    fireEvent.click(btnElement1 as HTMLElement);
   });
 });

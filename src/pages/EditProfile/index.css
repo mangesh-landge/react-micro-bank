@@ -1,0 +1,120 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Open Sans;
+  font-style: normal;
+  color: #1a1a1a;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+.edit-text {
+  margin: 32px 0 0 24px;
+  text-align: left;
+}
+
+.form-component {
+  margin-top: 20px;
+}
+
+.edit-container {
+  width: 95%;
+  margin: 20px;
+  background: #ffffff;
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.image-cont {
+  width: 200px;
+  height: 235px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.image-sub {
+  background: #f2f2f2;
+  border: 1px dashed #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  height: 180px;
+  text-align: center;
+}
+
+.image-profile {
+  margin-top: 72px;
+}
+
+.dropimage-con {
+  width: 180px;
+  height: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  align-items: center;
+  text-align: center;
+  color: #d90429;
+  margin: 8px auto;
+}
+
+.form-lable {
+  margin: 24px 0 8px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #1a1a1a;
+}
+
+.form-input-box {
+  width: 320px;
+  height: 50px;
+  background: #e8e8e8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-box input {
+  padding: 0px 20px;
+  font-size: 18px;
+  width: 280px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.form-error {
+  margin: 8px 0 8px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #d90429;
+  text-align: left;
+}
+
+.form-button {
+  display: flex;
+  align-items: left;
+}
+
+.update-account-button {
+  width: 320px;
+  height: 50px;
+  margin: 32px 0px 0;
+  outline: none;
+  border: none;
+  background: #d90429;
+  box-shadow: 0px 6px 28px 5px rgba(254, 45, 23, 0.3);
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
