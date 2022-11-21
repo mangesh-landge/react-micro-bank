@@ -1,5 +1,5 @@
 import { ActionType } from "./actionTypes";
-import { UserDataAction, AvailableServiceAction } from "./action";
+import { AvailableServiceAction } from "./action";
 
 interface service {
   id: string;

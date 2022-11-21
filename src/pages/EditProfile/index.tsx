@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "redux";
-import { ImageIcon } from "../../icons/Icons";
+// import { ImageIcon } from "../../icons/Icons";
 
 import "./index.css";
 import unHideIcon from "../../assets/file/hide_unhide.svg";

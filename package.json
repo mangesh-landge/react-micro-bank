@@ -71,7 +71,17 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.stories.tsx"
+      "!src/**/*.stories.tsx",
+      "!src/features/home/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/*.style.tsx",
+      "!src/tests/*",
+      "!src/tests/**/*",
+      "!src/assets/**/*",
+      "!src/redux/store.ts",
+      "!src/reportWebVitals.ts",
+      "!src/serviceWorker.ts",
+      "!src/index.tsx"
     ]
   },
   "devDependencies": {
